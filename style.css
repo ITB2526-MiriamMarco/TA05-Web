@@ -1,0 +1,91 @@
+/* Estilos Generales y del Cuerpo */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo de la página */
+}
+
+.container {
+    /* Establece el diseño de dos columnas para el contenido principal */
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Estilo del Bloque Lateral de Información */
+.sidebar-info {
+    width: 30%; /* Ancho para el texto largo */
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    line-height: 1.6;
+    font-size: 0.9em;
+    background-color: #e9e9e9;
+}
+
+/* 2. Estilo del Contenido Principal de Proyectos */
+.main-content {
+    width: 70%; /* Ancho para los proyectos */
+    padding: 20px;
+}
+
+.project-card {
+    margin-bottom: 40px;
+}
+
+.project-header h2 {
+    border: 1px solid #333; /* Simula el contorno del título del wireframe */
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.project-details {
+    display: flex; /* Para alinear el texto/líneas con los círculos */
+    justify-content: space-between;
+}
+
+.project-details p {
+    flex-basis: 60%; /* Espacio para el texto de la explicación */
+    margin: 0;
+}
+
+.dashed-line {
+    border: none;
+    border-top: 1px dashed #aaa; /* La línea punteada del wireframe */
+    margin: 10px 0;
+}
+
+/* 3. Estilo de los Círculos de Imagen */
+.image-circles {
+    flex-basis: 35%; /* Espacio para los círculos */
+    display: flex;
+    flex-wrap: wrap; /* Permite que se organicen en dos filas (dos arriba, uno abajo, o 2x2) */
+    gap: 15px; /* Espacio entre círculos */
+    justify-content: flex-end; /* Alinea los círculos a la derecha */
+}
+
+.circle {
+    width: 80px; /* Tamaño del círculo */
+    height: 80px;
+    border-radius: 50%; /* ¡Convierte el div en un círculo! */
+    background-color: #ccc; /* Color de fondo de los círculos */
+    border: 2px solid #333;
+    /* Centrar la imagen o contenido dentro del círculo si se añade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegura que la imagen no se salga del círculo */
+}
+
+/* 4. Estilo del Menú de Navegación (Pie de página) */
+.navigation-menu {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+    max-width: 800px; /* Controla el ancho del menú */
+    margin: 20px auto;
+    background-color: #ddd;
+}
