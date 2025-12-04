@@ -1,205 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A personal portfolio homepage showcasing projects on Linux Virtual Machines and CSS Design.">
-    <meta name="author" content="Your Name">
-    <title>My Portfolio | Home</title>
-
-    <style>
-        /* General Reset and Base Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* Main Content Layout */
-        main {
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .content-section {
-            flex: 3; /* Main content takes up more space */
-        }
-
-        aside {
-            flex: 1; /* Sidebar */
-            background-color: #ecf0f1;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        /* Section and Article Styles */
-        section {
-            margin-bottom: 30px;
-        }
-
-        article {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        article h2 {
-            color: #3498db;
-            border-bottom: 2px solid #bdc3c7;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        /* Project Image/Circle Layout */
-        .project-circles {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 15px;
-        }
-
-        .circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #95a5a6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.9em;
-            overflow: hidden; /* To handle background images if used */
-            border: 3px solid #3498db;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Specific Project Styles (for the Linux Circles) */
-        .linux-circle-1 { background-image: url('linux_logo_placeholder_1.png'); background-color: #e74c3c; } /* Replace with actual image URL */
-        .linux-circle-2 { background-image: url('ubuntu_screenshot_placeholder.png'); background-color: #f39c12; } /* Replace with actual image URL */
-        .linux-circle-3 { background-image: url('terminal_placeholder.png'); background-color: #2ecc71; } /* Replace with actual image URL */
-
-        /* Footer Styles */
-        footer {
-            background-color: #34495e;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: #ecf0f1;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-    </style>
+    <title>Ciberseguridad y Proyectos</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 
-    <header>
-        <div class="logo">💻 My Tech Portfolio</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="content-section">
-            <section id="introduction">
-                <h1>Welcome to My Project Showcase</h1>
-                <p>Explore my work in **Virtualization**, **Operating Systems (Linux)**, and **Web Design (CSS)**.</p>
-            </section>
-
-            <article id="linux-project">
-                <h2>🐧 Project 1: Linux Virtual Machines & System Administration</h2>
-                <p>This project involved setting up and configuring a **Ubuntu Virtual Machine (VM)** using tools like **VirtualBox** or **VMware**. Key tasks included:</p>
-                <ul>
-                    <li>**VM Setup:** Installation, network configuration, and shared folders.</li>
-                    <li>**Linux Fundamentals:** Command-line interface (CLI) commands, file system navigation, and basic scripting.</li>
-                    <li>**Package Management:** Installing and updating software using `apt` and understanding dependencies.</li>
-                </ul>
-                <div class="project-circles">
-                    <div class="circle linux-circle-1" title="Linux Logo">Linux</div>
-                    <div class="circle linux-circle-2" title="Ubuntu Screenshot">Ubuntu VM</div>
-                    <div class="circle linux-circle-3" title="Terminal Window">Terminal</div>
-                </div>
-            </article>
-
-            <article id="css-project">
-                <h2>🎨 Project 2: Advanced CSS Design & Layout</h2>
-                <p>Focusing on modern web styling techniques, this project demonstrates proficiency in **CSS3** and responsive design principles. Core concepts applied:</p>
-                <ul>
-                    <li>**Flexbox and Grid:** Creating robust and dynamic two-dimensional layouts.</li>
-                    <li>**CSS Variables:** Implementing design tokens for consistent styling.</li>
-                    <li>**Transitions and Animations:** Adding subtle interactivity and visual polish to the user interface.</li>
-                    <li>**Media Queries:** Ensuring the design adapts flawlessly to different screen sizes.</li>
-                </ul>
-                <p>The layout and styling of **this very page** (header, navigation, circles) are an example of this project's scope!</p>
-            </article>
-        </div>
-
-        <aside>
-            <h3>🔗 Quick Links & Resources</h3>
-            <p>Check out these related topics:</p>
-            <ul>
-                <li><a href="#">Ubuntu Official Site</a></li>
-                <li><a href="#">CSS Flexbox Guide</a></li>
-                <li><a href="#">Command Line Cheat Sheet</a></li>
-                <li><a href="#">My GitHub Repository</a></li>
-            </ul>
+    <div class="container">
+        
+        <aside class="sidebar-info">
+            <p><strong>CYBERSECURITY WEB PAGE INFORMATION</strong></p>
+            <p>This website is dedicated to exploring the core principles and practices of **Cybersecurity**. Cybersecurity is the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks. It is essential in today's digital world to protect sensitive information from theft and damage.</p>
+            <p>Our focus includes **Network Security**, which protects the internal network from intruders; **Application Security**, which ensures software and devices are free of threats; and **Information Security**, which protects the integrity and privacy of data, both in storage and transit. Implementing strong **access controls**, using **encryption**, and maintaining regular **software updates** are key components of a robust security posture.</p>
+            <p>We aim to educate users about common threats like **malware**, **phishing**, and **ransomware**, and provide actionable insights into best defensive strategies. Stay informed, stay secure.</p>
         </aside>
 
-    </main>
+        <main class="main-content">
+            
+            <section class="project-card">
+                <div class="project-header">
+                    <h2>Título Proyecto: 🐧 Linux Ubuntu y Código</h2>
+                </div>
+                <div class="project-details">
+                    <p>Linux is an open-source operating system kernel, and **Ubuntu** is one of its most popular distributions. It is widely used in servers and cybersecurity applications due to its stability, security, and command-line versatility. It allows users complete control over their system.</p>
+                    <hr class="dashed-line">
+                    <div class="image-circles">
+                        <div class="circle">
+                                                    </div>
+                        <div class="circle">
+                                                    </div>
+                        <div class="circle">
+                                                    </div>
+                    </div>
+                </div>
+            </section>
 
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved. | 
-            <a href="#">LinkedIn</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">Email</a>
-        </p>
+            <section class="project-card">
+                <div class="project-header">
+                    <h2>Título Proyecto: 🎨 CSS y Estilización Web</h2>
+                </div>
+                <div class="project-details">
+                    <p>**CSS (Cascading Style Sheets)** is a stylesheet language used to describe the presentation of a document written in a markup language like HTML. CSS is fundamental for controlling the layout, colors, fonts, and overall visual appearance of a webpage, separating content from design.</p>
+                    <hr class="dashed-line">
+                    <div class="image-circles">
+                        <div class="circle">
+                                                    </div>
+                        <div class="circle">
+                                                    </div>
+                        <div class="circle">
+                                                    </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="navigation-menu">
+        <p>menú de navegacion entre paginas</p>
     </footer>
 
 </body>
