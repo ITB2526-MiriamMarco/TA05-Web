@@ -1,17 +1,17 @@
-/* Estils Generals */
+/* General Styles */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    display: flex; /* To stretch the overall content */
+    display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
 }
 
-/* Contenidor Principal (per a centrar el disseny) */
+/* Main Container (to center the design) */
 .contingut-principal {
-    width: 90%; /* Ample del contenidor principal */
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -28,7 +28,7 @@ body {
     gap: 20px;
 }
 
-/* Estil de la Capçalera */
+/* Header Style */
 .capcalera-principal {
     background-color: #333;
     color: white;
@@ -37,20 +37,32 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* The design seems to have a full-width container on top of the main box */
 }
 
-.logo-container h1 {
-    margin: 0;
-    padding-left: 5%; /* Aligning with the main content's margins */
+.logo-container {
+    padding-left: 5%;
 }
+
+/* --- New Style for Code Image in Header --- */
+.code-image-simulation {
+    background-color: #000;
+    color: #0f0; /* Classic green terminal text */
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    border: 2px solid #0f0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ------------------------------------------- */
 
 .menu-navegacio-principal ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    padding-right: 5%; /* Aligning with the main content's margins */
+    padding-right: 5%;
 }
 
 .menu-navegacio-principal li a {
@@ -59,24 +71,24 @@ body {
     padding: 0 15px;
 }
 
-/* Estil de l'ASIDE (Columna esquerra) */
+/* ASIDE Style (Left Column) */
 .columna-aside {
     grid-area: aside;
-    border: 1px solid black; /* Bords del contenidor segons el disseny */
+    border: 1px solid black;
     padding: 10px;
-    /* Ensure the 'blablabla' box is visually prominent */
     display: flex;
     flex-direction: column;
-    height: 100%; /* Important for the aside to stretch */
+    /* Use a fixed min-height based on content to ensure the box is visible */
+    min-height: 400px;
 }
 
-.aside-content {
-    /* To fill the vertical space available by the projects */
-    overflow-y: hidden; /* Hide scroll if content is too long */
-    height: 100%;
+.aside-content h3 {
+    margin-top: 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
 }
 
-/* Estil de la Secció de Projectes */
+/* Project Section Style */
 .seccio-projectes {
     grid-area: seccio-projectes;
     display: flex;
@@ -84,28 +96,27 @@ body {
     gap: 30px;
 }
 
-/* Estil de l'ARTICLE (Contenidor de cada projecte) */
+/* ARTICLE Style (Each project container) */
 .projecte {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Aligns the elements at the top */
+    align-items: flex-start;
     padding: 10px 0;
-    /* border: 1px solid #ccc; /* Optional for visual separation */
 }
 
 .info-textual {
-    flex-basis: 65%; /* Space for title and lines */
+    flex-basis: 65%;
 }
 
 .info-textual h2 {
-    border: 1px solid black; /* Box around the project title */
+    border: 1px solid black;
     padding: 5px 10px;
     display: inline-block;
     margin-top: 0;
 }
 
 .descripcio-linies {
-    border-bottom: 1px solid black; /* Line under each text line */
+    border-bottom: 1px solid black;
     margin: 5px 0;
     padding-bottom: 3px;
     line-height: 1.2;
@@ -113,27 +124,47 @@ body {
 
 .separador {
     border: none;
-    border-top: 2px dashed black; /* Dashed line separator */
+    border-top: 2px dashed black;
     margin: 20px 0;
     width: 80%;
 }
 
 .elements-visuals {
-    flex-basis: 30%; /* Space for circles */
+    flex-basis: 30%;
     display: flex;
-    flex-direction: column; /* Circles stacked vertically on the right */
+    flex-direction: column;
     gap: 10px;
 }
 
+/* --- Style for Image Circles (Simulated) --- */
 .cercle {
     width: 50px;
     height: 50px;
     border: 2px solid black;
     border-radius: 50%;
-    margin-left: auto; /* Push circles to the right side of their container */
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
 }
 
-/* Estil de la Navegació entre Pàgines */
+.linux-image {
+    /* Different style for Linux images */
+    background-color: #f7a020; /* Orange/Yellow */
+    color: #333;
+}
+
+.css-image {
+    /* Different style for CSS images */
+    background-color: #264de4; /* Blue */
+    color: white;
+}
+/* ------------------------------------------- */
+
+
+/* Page Navigation Style */
 .navegacio-pagines {
     grid-area: navegacio;
     padding: 20px 0;
@@ -141,14 +172,14 @@ body {
 }
 
 .menu-navegacio-pagines {
-    border: 1px solid black; /* Box around the navigation menu */
+    border: 1px solid black;
     padding: 15px;
     width: 50%;
     margin: 0 auto;
 }
 
 
-/* Estil del Peu de Pàgina */
+/* Footer Style */
 .peu-pagina {
     background-color: #333;
     color: white;
