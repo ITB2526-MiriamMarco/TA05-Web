@@ -43,7 +43,7 @@ body {
     padding-left: 5%;
 }
 
-/* --- New Style for Code Image in Header --- */
+/* --- Style for Code Image in Header --- */
 .code-image-simulation {
     background-color: #000;
     color: #0f0; /* Classic green terminal text */
