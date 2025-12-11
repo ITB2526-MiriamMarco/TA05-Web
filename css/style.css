@@ -267,3 +267,9 @@ body {
     margin: 30px auto 0 auto;
     text-align: center;
 }
+/* --- New Style for Python Image Circles --- */
+.python-image {
+    /* Classic Python blue/yellow color scheme */
+    background-color: #306998;
+    color: #ffd43b;
+}
