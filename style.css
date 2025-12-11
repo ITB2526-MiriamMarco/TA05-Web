@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-/* Main Container (to center the design) */
+/* Main Container (Pàgina Principal amb columna lateral - Usat per index.html) */
 .contingut-principal {
     width: 90%;
     max-width: 1200px;
@@ -18,10 +18,10 @@ body {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
-    /* GRID for the main layout: aside on the left, projects on the right */
+    /* GRID: This creates the aside (25%) and project section (75%) columns */
     display: grid;
-    grid-template-columns: 25% 75%; /* Aside column (25%) and Project section (75%) */
-    grid-template-rows: auto auto; /* Two rows: Projects and Page Navigation */
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "aside seccio-projectes"
         "navegacio navegacio";
@@ -43,10 +43,10 @@ body {
     padding-left: 5%;
 }
 
-/* --- Style for Code Image in Header --- */
+/* Style for Code Image in Header */
 .code-image-simulation {
     background-color: #000;
-    color: #0f0; /* Classic green terminal text */
+    color: #0f0;
     font-family: 'Courier New', monospace;
     padding: 10px;
     border: 2px solid #0f0;
@@ -55,10 +55,9 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-/* ------------------------------------------- */
 
 .menu-navegacio-principal ul {
-    list-style: none;
+    list-style: none; /* Removes bullet points from navigation */
     margin: 0;
     padding: 0;
     display: flex;
@@ -71,14 +70,13 @@ body {
     padding: 0 15px;
 }
 
-/* ASIDE Style (Left Column) */
+/* ASIDE Style (Left Column - Used by index.html) */
 .columna-aside {
     grid-area: aside;
     border: 1px solid black;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* Use a fixed min-height based on content to ensure the box is visible */
     min-height: 400px;
 }
 
@@ -88,7 +86,7 @@ body {
     padding-bottom: 5px;
 }
 
-/* Project Section Style */
+/* Project Section Style (Used by index.html) */
 .seccio-projectes {
     grid-area: seccio-projectes;
     display: flex;
@@ -96,7 +94,7 @@ body {
     gap: 30px;
 }
 
-/* ARTICLE Style (Each project container) */
+/* ARTICLE Style (Each project container - Used by index.html) */
 .projecte {
     display: flex;
     justify-content: space-between;
@@ -113,6 +111,12 @@ body {
     padding: 5px 10px;
     display: inline-block;
     margin-top: 0;
+}
+
+.info-textual h2 a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
 }
 
 .descripcio-linies {
@@ -136,7 +140,7 @@ body {
     gap: 10px;
 }
 
-/* --- Style for Image Circles (Simulated) --- */
+/* Style for Image Circles (Simulated) */
 .cercle {
     width: 50px;
     height: 50px;
@@ -146,7 +150,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 9px; /* Slightly smaller for code */
+    font-size: 9px;
     font-weight: bold;
     text-align: center;
     line-height: 10px;
@@ -154,20 +158,16 @@ body {
 }
 
 .linux-image {
-    /* Different style for Linux images */
-    background-color: #f7a020; /* Orange/Yellow */
+    background-color: #f7a020;
     color: #333;
 }
 
 .css-image {
-    /* Different style for CSS images */
-    background-color: #264de4; /* Blue */
+    background-color: #264de4;
     color: white;
 }
-/* ------------------------------------------- */
 
-
-/* Page Navigation Style */
+/* Page Navigation Style (Used by index.html) */
 .navegacio-pagines {
     grid-area: navegacio;
     padding: 20px 0;
@@ -180,7 +180,6 @@ body {
     width: 50%;
     margin: 0 auto;
 }
-
 
 /* Footer Style */
 .peu-pagina {
@@ -196,18 +195,20 @@ body {
     margin: 0 10px;
     text-decoration: none;
 }
-/* --- New styles for the detail page (linux_project.html) --- */
 
-/* Override for the main content area of the detail page (no GRID needed) */
+
+/* --- Styles for the detail pages (linux_project.html and css_project.html) --- */
+
+/* Main Container for Detail Pages (No Aside/Single Column) */
 .contingut-principal-detall {
     width: 90%;
-    max-width: 900px; /* Slightly narrower content area */
+    max-width: 900px; /* Reduced width for focus */
     margin: 0 auto;
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
-    display: block; /* No grid needed */
+    display: block;
 }
 
 .projecte-detall {
@@ -217,10 +218,17 @@ body {
 }
 
 .titol-detall h1 {
-    border: 1px solid black; /* Title box */
+    border: 1px solid black;
     padding: 10px;
     text-align: center;
     margin-bottom: 30px;
+}
+
+/* Style for the link inside the main title of the detail pages */
+.titol-detall h1 a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
 }
 
 /* Style for each project part (Part 1, Part 2, Part 3) */
@@ -234,7 +242,6 @@ body {
 }
 
 .project-part h2 {
-    /* Style for the 'part 1', 'part 2', 'part 3' boxes */
     border: 1px solid black;
     padding: 5px 10px;
     display: inline-block;
@@ -247,27 +254,16 @@ body {
 }
 
 .project-part .cercle {
-    /* Style the circle to be on the right */
-    flex-shrink: 0; /* Prevents the circle from shrinking */
+    flex-shrink: 0;
     margin-left: 20px;
-    width: 60px; /* Slightly bigger circle */
+    width: 60px;
     height: 60px;
 }
 
 .menu-navegacio-pagines-detall {
-    border: 1px solid black; /* Box around the navigation menu */
+    border: 1px solid black;
     padding: 15px;
     width: 50%;
     margin: 30px auto 0 auto;
     text-align: center;
-}
-
-/* Link style update for index.html */
-.info-textual h2 a {
-    color: inherit; /* Keep the link color the same as the text */
-    text-decoration: none;
-    display: block;
-}
-.info-textual h2 a:hover {
-    text-decoration: underline;
 }
