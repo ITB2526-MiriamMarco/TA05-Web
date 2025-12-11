@@ -1,198 +1,75 @@
-/* General Styles */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+/* --- New styles for the detail page (linux_project.html) --- */
 
-/* Main Container (to center the design) */
-.contingut-principal {
+/* Override for the main content area of the detail page (no GRID needed) */
+.contingut-principal-detall {
     width: 90%;
-    max-width: 1200px;
+    max-width: 900px; /* Slightly narrower content area */
     margin: 0 auto;
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
-    /* GRID for the main layout: aside on the left, projects on the right */
-    display: grid;
-    grid-template-columns: 25% 75%; /* Aside column (25%) and Project section (75%) */
-    grid-template-rows: auto auto; /* Two rows: Projects and Page Navigation */
-    grid-template-areas:
-        "aside seccio-projectes"
-        "navegacio navegacio";
-    gap: 20px;
+    display: block; /* No grid needed */
 }
 
-/* Header Style */
-.capcalera-principal {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo-container {
-    padding-left: 5%;
-}
-
-/* --- Style for Code Image in Header --- */
-.code-image-simulation {
-    background-color: #000;
-    color: #0f0; /* Classic green terminal text */
-    font-family: 'Courier New', monospace;
-    padding: 10px;
-    border: 2px solid #0f0;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-/* ------------------------------------------- */
-
-.menu-navegacio-principal ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    padding-right: 5%;
-}
-
-.menu-navegacio-principal li a {
-    color: white;
-    text-decoration: none;
-    padding: 0 15px;
-}
-
-/* ASIDE Style (Left Column) */
-.columna-aside {
-    grid-area: aside;
-    border: 1px solid black;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    /* Use a fixed min-height based on content to ensure the box is visible */
-    min-height: 400px;
-}
-
-.aside-content h3 {
-    margin-top: 0;
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-}
-
-/* Project Section Style */
-.seccio-projectes {
-    grid-area: seccio-projectes;
+.projecte-detall {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* ARTICLE Style (Each project container) */
-.projecte {
+.titol-detall h1 {
+    border: 1px solid black; /* Title box */
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Style for each project part (Part 1, Part 2, Part 3) */
+.project-part {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 10px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
 }
 
-.info-textual {
-    flex-basis: 65%;
-}
-
-.info-textual h2 {
+.project-part h2 {
+    /* Style for the 'part 1', 'part 2', 'part 3' boxes */
     border: 1px solid black;
     padding: 5px 10px;
     display: inline-block;
     margin-top: 0;
+    margin-bottom: 15px;
 }
 
-.descripcio-linies {
-    border-bottom: 1px solid black;
-    margin: 5px 0;
-    padding-bottom: 3px;
-    line-height: 1.2;
+.content-lines {
+    flex-basis: 70%;
 }
 
-.separador {
-    border: none;
-    border-top: 2px dashed black;
-    margin: 20px 0;
-    width: 80%;
+.project-part .cercle {
+    /* Style the circle to be on the right */
+    flex-shrink: 0; /* Prevents the circle from shrinking */
+    margin-left: 20px;
+    width: 60px; /* Slightly bigger circle */
+    height: 60px;
 }
 
-.elements-visuals {
-    flex-basis: 30%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* --- Style for Image Circles (Simulated) --- */
-.cercle {
-    width: 50px;
-    height: 50px;
-    border: 2px solid black;
-    border-radius: 50%;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 9px; /* Slightly smaller for code */
-    font-weight: bold;
-    text-align: center;
-    line-height: 10px;
-    padding: 5px;
-}
-
-.linux-image {
-    /* Different style for Linux images */
-    background-color: #f7a020; /* Orange/Yellow */
-    color: #333;
-}
-
-.css-image {
-    /* Different style for CSS images */
-    background-color: #264de4; /* Blue */
-    color: white;
-}
-/* ------------------------------------------- */
-
-
-/* Page Navigation Style */
-.navegacio-pagines {
-    grid-area: navegacio;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.menu-navegacio-pagines {
-    border: 1px solid black;
+.menu-navegacio-pagines-detall {
+    border: 1px solid black; /* Box around the navigation menu */
     padding: 15px;
     width: 50%;
-    margin: 0 auto;
-}
-
-
-/* Footer Style */
-.peu-pagina {
-    background-color: #333;
-    color: white;
+    margin: 30px auto 0 auto;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
 }
 
-.xarxes-socials a {
-    color: #fff;
-    margin: 0 10px;
+/* Link style update for index.html */
+.info-textual h2 a {
+    color: inherit; /* Keep the link color the same as the text */
     text-decoration: none;
+    display: block;
+}
+.info-textual h2 a:hover {
+    text-decoration: underline;
 }
