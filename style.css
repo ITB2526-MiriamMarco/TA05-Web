@@ -1,91 +1,164 @@
-/* Estilos Generales y del Cuerpo */
+/* Estils Generals */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Fondo de la página */
+    background-color: #f4f4f4;
+    display: flex; /* To stretch the overall content */
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
 }
 
-.container {
-    /* Establece el diseño de dos columnas para el contenido principal */
-    display: flex;
+/* Contenidor Principal (per a centrar el disseny) */
+.contingut-principal {
+    width: 90%; /* Ample del contenidor principal */
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 20px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    /* GRID for the main layout: aside on the left, projects on the right */
+    display: grid;
+    grid-template-columns: 25% 75%; /* Aside column (25%) and Project section (75%) */
+    grid-template-rows: auto auto; /* Two rows: Projects and Page Navigation */
+    grid-template-areas:
+        "aside seccio-projectes"
+        "navegacio navegacio";
+    gap: 20px;
 }
 
-/* 1. Estilo del Bloque Lateral de Información */
-.sidebar-info {
-    width: 30%; /* Ancho para el texto largo */
-    padding: 20px;
-    border-right: 1px solid #ccc;
-    line-height: 1.6;
-    font-size: 0.9em;
-    background-color: #e9e9e9;
-}
-
-/* 2. Estilo del Contenido Principal de Proyectos */
-.main-content {
-    width: 70%; /* Ancho para los proyectos */
-    padding: 20px;
-}
-
-.project-card {
-    margin-bottom: 40px;
-}
-
-.project-header h2 {
-    border: 1px solid #333; /* Simula el contorno del título del wireframe */
-    padding: 5px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.project-details {
-    display: flex; /* Para alinear el texto/líneas con los círculos */
+/* Estil de la Capçalera */
+.capcalera-principal {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    display: flex;
     justify-content: space-between;
-}
-
-.project-details p {
-    flex-basis: 60%; /* Espacio para el texto de la explicación */
-    margin: 0;
-}
-
-.dashed-line {
-    border: none;
-    border-top: 1px dashed #aaa; /* La línea punteada del wireframe */
-    margin: 10px 0;
-}
-
-/* 3. Estilo de los Círculos de Imagen */
-.image-circles {
-    flex-basis: 35%; /* Espacio para los círculos */
-    display: flex;
-    flex-wrap: wrap; /* Permite que se organicen en dos filas (dos arriba, uno abajo, o 2x2) */
-    gap: 15px; /* Espacio entre círculos */
-    justify-content: flex-end; /* Alinea los círculos a la derecha */
-}
-
-.circle {
-    width: 80px; /* Tamaño del círculo */
-    height: 80px;
-    border-radius: 50%; /* ¡Convierte el div en un círculo! */
-    background-color: #ccc; /* Color de fondo de los círculos */
-    border: 2px solid #333;
-    /* Centrar la imagen o contenido dentro del círculo si se añade */
-    display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Asegura que la imagen no se salga del círculo */
+    width: 100%;
+    /* The design seems to have a full-width container on top of the main box */
 }
 
-/* 4. Estilo del Menú de Navegación (Pie de página) */
-.navigation-menu {
-    border: 1px solid #333;
+.logo-container h1 {
+    margin: 0;
+    padding-left: 5%; /* Aligning with the main content's margins */
+}
+
+.menu-navegacio-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding-right: 5%; /* Aligning with the main content's margins */
+}
+
+.menu-navegacio-principal li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+/* Estil de l'ASIDE (Columna esquerra) */
+.columna-aside {
+    grid-area: aside;
+    border: 1px solid black; /* Bords del contenidor segons el disseny */
     padding: 10px;
+    /* Ensure the 'blablabla' box is visually prominent */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Important for the aside to stretch */
+}
+
+.aside-content {
+    /* To fill the vertical space available by the projects */
+    overflow-y: hidden; /* Hide scroll if content is too long */
+    height: 100%;
+}
+
+/* Estil de la Secció de Projectes */
+.seccio-projectes {
+    grid-area: seccio-projectes;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Estil de l'ARTICLE (Contenidor de cada projecte) */
+.projecte {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns the elements at the top */
+    padding: 10px 0;
+    /* border: 1px solid #ccc; /* Optional for visual separation */
+}
+
+.info-textual {
+    flex-basis: 65%; /* Space for title and lines */
+}
+
+.info-textual h2 {
+    border: 1px solid black; /* Box around the project title */
+    padding: 5px 10px;
+    display: inline-block;
+    margin-top: 0;
+}
+
+.descripcio-linies {
+    border-bottom: 1px solid black; /* Line under each text line */
+    margin: 5px 0;
+    padding-bottom: 3px;
+    line-height: 1.2;
+}
+
+.separador {
+    border: none;
+    border-top: 2px dashed black; /* Dashed line separator */
+    margin: 20px 0;
+    width: 80%;
+}
+
+.elements-visuals {
+    flex-basis: 30%; /* Space for circles */
+    display: flex;
+    flex-direction: column; /* Circles stacked vertically on the right */
+    gap: 10px;
+}
+
+.cercle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: auto; /* Push circles to the right side of their container */
+}
+
+/* Estil de la Navegació entre Pàgines */
+.navegacio-pagines {
+    grid-area: navegacio;
+    padding: 20px 0;
     text-align: center;
-    max-width: 800px; /* Controla el ancho del menú */
-    margin: 20px auto;
-    background-color: #ddd;
+}
+
+.menu-navegacio-pagines {
+    border: 1px solid black; /* Box around the navigation menu */
+    padding: 15px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+/* Estil del Peu de Pàgina */
+.peu-pagina {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.xarxes-socials a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
 }
