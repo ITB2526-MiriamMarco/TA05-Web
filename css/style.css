@@ -167,6 +167,28 @@ body {
     color: white;
 }
 
+/* --- New Style for Python Image Circles --- */
+.python-image {
+    /* Classic Python blue/yellow color scheme */
+    background-color: #306998;
+    color: #ffd43b;
+}
+
+/* --- New Style for SQL Image Circles --- */
+.sql-image {
+    /* Typical blue/grey for databases */
+    background-color: #00758F;
+    color: white;
+}
+
+/* --- New Style for PowerShell Image Circles --- */
+.powershell-image {
+    /* Classic PowerShell blue */
+    background-color: #012456;
+    color: #E2E1E3;
+}
+
+
 /* Page Navigation Style (Used by index.html) */
 .navegacio-pagines {
     grid-area: navegacio;
@@ -197,7 +219,7 @@ body {
 }
 
 
-/* --- Styles for the detail pages (linux_project.html and css_project.html) --- */
+/* --- Styles for the detail pages (e.g., linux_project.html, sql_project.html) --- */
 
 /* Main Container for Detail Pages (No Aside/Single Column) */
 .contingut-principal-detall {
@@ -267,9 +289,76 @@ body {
     margin: 30px auto 0 auto;
     text-align: center;
 }
-/* --- New Style for Python Image Circles --- */
-.python-image {
-    /* Classic Python blue/yellow color scheme */
-    background-color: #306998;
-    color: #ffd43b;
+
+/* --- Styles for the Projects Portfolio Index (projects_portfolio.html) --- */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
 }
+
+.project-list h2 {
+    /* Title for project categories (e.g., System & Development Projects) */
+    border-bottom: 3px double #333;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.project-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list ul li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    transition: background-color 0.3s ease;
+}
+
+.project-list ul li:hover {
+    background-color: #e9e9e9;
+}
+
+.project-list h3 a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.project-list h3 a:hover {
+    text-decoration: underline;
+}
+
+.project-list p {
+    color: #555;
+    margin-top: 5px;
+    font-size: 0.95em;
+}
+
+
+/* --- Specific Styles for Detail Page Content (e.g., sql_project.html) --- */
+.project-sections article {
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.project-summary {
+    font-style: italic;
+    color: #333;
+    padding-left: 10px;
+    border-left: 4px solid #007bff;
+}
+
+/* Styling for the code block in detail pages */
+pre {
+    background-color: #282c34; /* Dark background for code */
+    color: #a9b7c6; /* Light text for code */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Allows horizontal scrolling for long lines */
+    font-size: 0.9em;
+    font-family: 'Consolas', 'Courier New', monospace;
+}}
