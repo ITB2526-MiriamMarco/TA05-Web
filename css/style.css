@@ -553,3 +553,100 @@ h1, h2, h3, h4 {
 .submit-button-container button:hover {
     background-color: #fff;
 }
+/* ******************************************************** */
+/* MODIFICACIONS PER ADAPTAR EL TEMA FOSC/HACKER (FINAL) */
+/* ******************************************************** */
+
+/* Fons real que dibuixarà el JS (Matrix effect) */
+#matrixCanvas {
+    position: fixed; /* Fixa el fons a la vista */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d0d0d; /* Fons base si el JS falla */
+    z-index: -1; /* Mantenir-lo darrere de tot el contingut */
+}
+
+body {
+    /* El body ja no té fons, el té el canvas de JS */
+    background-color: transparent;
+    color: #e0ffe0; /* Canviar el color del text general a verd clar/blanc */
+}
+
+/* Fer transparents els fons dels contenidors principals per veure el fons darrere */
+.contingut-principal {
+    background-color: rgba(13, 13, 13, 0.90); /* Fons fosc semitransparent per llegibilitat (més opac) */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); /* Ombra verda de neó */
+}
+
+/* També apliquem aquesta transparència a les pàgines de detall */
+.contingut-principal-detall {
+    background-color: rgba(13, 13, 13, 0.90);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+}
+
+/* Estil de la capçalera */
+.capcalera-principal {
+    background-color: #111; /* Fer la capçalera més fosca */
+    border-bottom: 2px solid #0f0;
+}
+
+/* Estil dels títols (perquè es vegin bé sobre el fons fosc) */
+h1, h2, h3, h4 {
+    color: #0f0;
+}
+
+/* Estil dels enllaços del menú */
+.menu-navegacio-principal li a {
+    color: #0f0;
+}
+.menu-navegacio-principal li a:hover {
+    color: #fff;
+}
+
+/* Les seccions de projectes i l'aside s'han d'adaptar també */
+.columna-aside {
+    border: 1px solid #0f0;
+    background-color: rgba(13, 13, 13, 0.90);
+}
+.aside-content h3 {
+    border-bottom: 1px solid #0f0;
+}
+
+.info-textual h2 {
+    border: 1px solid #0f0;
+}
+.descripcio-linies {
+    border-bottom: 1px solid #0f0;
+}
+.separador {
+    border-top: 2px dashed #0f0;
+}
+
+/* Adaptació dels cercles de projectes al nou tema */
+.cercle {
+    border: 2px solid #0f0;
+}
+
+/* Adaptació dels estils de la llista de projectes */
+.project-list ul li {
+    border: 1px solid #0f0;
+    background-color: #1a1a1a;
+}
+.project-list ul li:hover {
+    background-color: #2a2a2a;
+}
+
+/* Adaptació dels estils de la pàgina de detall i formularis */
+.titol-detall h1, .menu-navegacio-pagines-detall, .satisfaction-form, .question-group {
+    border: 1px solid #0f0;
+    background-color: #1a1a1a;
+}
+.submit-button-container button {
+    background-color: #0f0;
+    color: #000;
+}
+.submit-button-container button:hover {
+    background-color: #fff;
+}
