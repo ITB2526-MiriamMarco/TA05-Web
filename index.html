@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Main project page, structured according to the visual design, featuring coding and cybersecurity content.">
+    <meta name="description" content="Main project page featuring coding and cybersecurity content with a Matrix effect.">
     <meta name="keywords" content="web, project, design, html, css, coding, linux, cybersecurity">
     <meta name="author" content="IA Helper">
-    <title>Code Projects - Updated Design</title>
+    <title>Code Projects - Matrix Design</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body id="top">
 
     <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
@@ -24,7 +25,6 @@
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
@@ -33,17 +33,21 @@
 
         <aside class="columna-aside">
             <div class="aside-content">
-                <h3>Cybersecurity Tasks: Overview</h3>
-                <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These attacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.</p>
+                <h3>Cybersecurity: Risk & Security</h3>
+                <p style="font-family: monospace; color: #0f0; font-size: 0.9em;">&gt; System Status: Secure</p>
 
-                <h4>Key Activities:</h4>
-                <ul>
-                    <li>**Risk Analysis:** Identifying vulnerabilities and threats in the system.</li>
-                    <li>**Threat Monitoring:** Using tools like SIEM to monitor network traffic for suspicious activity.</li>
-                    <li>**Implementing Defenses:** Deploying firewalls, antivirus, and intrusion prevention systems.</li>
-                    <li>**Incident Response:** Handling security breaches, containing the damage, and recovering affected systems.</li>
-                    <li>**Security Audits:** Regularly testing systems (e.g., penetration testing) to find weaknesses.</li>
-                    <li>**User Education:** Training employees on security protocols (phishing, password hygiene).</li>
+
+
+                <p>Cybersecurity protects systems and networks from digital attacks aimed at accessing or destroying sensitive information.</p>
+
+                <h4>Key Risk Activities:</h4>
+                <ul class="llista-riscos">
+                    <li><strong>Risk Analysis:</strong> Identifying vulnerabilities and potential threats.</li>
+                    <li><strong>Threat Monitoring:</strong> Real-time traffic analysis using SIEM tools.</li>
+                    <li><strong>Implementing Defenses:</strong> Firewalls, IDS, and encryption protocols.</li>
+                    <li><strong>Incident Response:</strong> Containing breaches and system recovery.</li>
+                    <li><strong>Security Audits:</strong> Regular penetration testing (Pentesting).</li>
+                    <li><strong>User Education:</strong> Training against Phishing and Social Engineering.</li>
                 </ul>
             </div>
         </aside>
@@ -52,16 +56,11 @@
 
             <article class="projecte">
                 <div class="info-textual">
-                    <section class="seccio-projectes">
-            <article class="projecte">
-                <div class="info-textual">
-                    <h2><a href="linux_project.html">Linux Project: System Administration Basics</a></h2>
+                    <h2><a href="linux_project.html">Linux Project: System Administration</a></h2>
                     <p class="descripcio-linies">Exploring core Linux distributions (Ubuntu, CentOS)</p>
-                    <p class="descripcio-linies">Exploring core Linux distributions (Ubuntu, CentOS)</p>
-                    <p class="descripcio-linies">Basic command-line interface (CLI) usage</p>
-                    <p class="descripcio-linies">User and permissions management</p>
-                    <p class="descripcio-linies">Package management with APT and YUM</p>
-                    <p class="descripcio-linies">Introduction to scripting (Bash)</p>
+                    <p class="descripcio-linies">Basic command-line interface (CLI) and shell usage</p>
+                    <p class="descripcio-linies">User management and file permissions (chmod/chown)</p>
+                    <p class="descripcio-linies">Introduction to automation with Bash scripting</p>
                     <hr class="separador">
                 </div>
                 <div class="elements-visuals">
@@ -73,12 +72,11 @@
 
             <article class="projecte">
                 <div class="info-textual">
-                    <h2><a href="css_project.html">CSS Project: Modern Layout and Design</a></h2>
-                    <p class="descripcio-linies">Introduction to CSS Selectors and properties</p>
-                    <p class="descripcio-linies">Layout techniques using Flexbox and Grid</p>
-                    <p class="descripcio-linies">Understanding the CSS Box Model</p>
-                    <p class="descripcio-linies">Responsive design basics (Media Queries)</p>
-                    <p class="descripcio-linies">Styling pseudo-classes and pseudo-elements</p>
+                    <h2><a href="css_project.html">CSS Project: Modern Layout & Design</a></h2>
+                    <p class="descripcio-linies">Layout techniques using Flexbox and CSS Grid</p>
+                    <p class="descripcio-linies">Understanding the CSS Box Model and positioning</p>
+                    <p class="descripcio-linies">Responsive design using advanced Media Queries</p>
+                    <p class="descripcio-linies">Transitions, animations, and pseudo-elements</p>
                     <hr class="separador">
                 </div>
                 <div class="elements-visuals">
@@ -88,12 +86,19 @@
                 </div>
             </article>
 
-        </section>
+            <section class="navegacio-pagines">
+                <div class="menu-navegacio-pagines">
+                    <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Terminal Navigation</h3>
+                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="#top" style="color: #0f0; text-decoration: none;">[ ↑ Up ]</a>
+                        <a href="projects_portfolio.html" style="color: #0f0; text-decoration: none;">[ cd /projects ]</a>
+                        <a href="python_project.html" style="color: #0f0; text-decoration: none;">[ ./python ]</a>
+                        <a href="sql_project.html" style="color: #0f0; text-decoration: none;">[ ./sql ]</a>
+                        <a href="packet_tracer_project.html" style="color: #0f0; text-decoration: none;">[ ./networking ]</a>
+                    </div>
+                </div>
+            </section>
 
-        <section class="navegacio-pagines">
-            <div class="menu-navegacio-pagines">
-                page navigation menu
-            </div>
         </section>
 
     </main>
@@ -101,9 +106,7 @@
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
         <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
+            <a href="#">[LinkedIn]</a> | <a href="#">[GitHub]</a>
         </div>
     </footer>
 
