@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of all technical projects, including Linux, CSS, Python, SQL, PowerShell, and Packet Tracer.">
-    <title>Projects Portfolio</title>
+    <title>Projects Portfolio - Matrix Mode</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
+    <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;div class="code"&gt;
+                &lt;div class="projects_index"&gt;
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -21,7 +23,6 @@
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
@@ -34,47 +35,58 @@
                 <h1>Technical Projects Portfolio</h1>
             </div>
 
-            <p>Welcome to the main project index. Below you will find a list of all technical projects, focusing on different domains such as system administration, web development, data analysis, and networking.</p>
-            <p>Click on any project title to see a detailed breakdown of the modules and objectives.</p>
+            <p style="color: #0f0; font-family: monospace;">&gt; Loading technical modules...</p>
+            <p>Benvingut a l'índex principal de projectes. Aquí trobaràs una llista de tots els treballs tècnics realitzats.</p>
 
-            <hr>
+            <hr class="separador">
 
             <div class="project-list">
                 <h2>System & Development Projects:</h2>
                 <ul>
                     <li>
                         <h3><a href="linux_project.html">Linux Project: System Administration & Security</a></h3>
-                        <p>Focuses on command line interface (CLI), user permissions, and basic scripting for system security.</p>
+                        <p>Focuses on CLI, permissions, and basic scripting.</p>
                     </li>
                     <li>
                         <h3><a href="css_project.html">CSS Project: Modern Layout and Responsive Design</a></h3>
-                        <p>Deep dive into Flexbox, CSS Grid, and responsive principles using Media Queries.</p>
+                        <p>Deep dive into Flexbox, CSS Grid, and Media Queries.</p>
                     </li>
                 </ul>
 
                 <h2>Emerging Technology Projects:</h2>
                 <ul>
                     <li>
-                        <h3><a href="python_project.html">Python Project: Data Automation and Scripting</a></h3>
-                        <p>Introduction to data structures, control flow, and automating common tasks using Python scripts.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3><a href="python_project.html">Python Project: Data Automation</a></h3>
+                                <p>Introduction to data structures and automating tasks using scripts.</p>
+                            </div>
+                            <div class="cercle python-image">print()</div>
+                        </div>
                     </li>
                     <li>
-                        <h3><a href="sql_project.html">SQL Project: Database Management and Queries</a></h3>
-                        <p>Learning how to design databases, write complex SELECT queries, and manage relational data (CRUD operations).</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3><a href="sql_project.html">SQL Project: Database Management</a></h3>
+                                <p>Learning how to design databases and write complex SELECT queries.</p>
+                            </div>
+                            <div class="cercle sql-image">SELECT</div>
+                        </div>
                     </li>
                     <li>
-                        <h3><a href="powershell_project.html">PowerShell Project: Windows System Management</a></h3>
-                        <p>Scripting for Windows environments, managing Active Directory, and automating administrative tasks using cmdlets.</p>
-                    </li>
-                    <li>
-                        <h3><a href="packet_tracer_project.html">Packet Tracer Project: Network Simulation and Configuration</a></h3>
-                        <p>Designing and simulating network topologies, configuring routers and switches, and troubleshooting network issues.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3><a href="powershell_project.html">PowerShell Project: Windows Management</a></h3>
+                                <p>Scripting for Windows environments and Active Directory automation.</p>
+                            </div>
+                            <div class="cercle powershell-image">PS&gt;_</div>
+                        </div>
                     </li>
                 </ul>
             </div>
 
             <div class="menu-navegacio-pagines-detall">
-                Return to Home
+                <a href="index.html" style="color: #0f0; text-decoration: none;">&lt; RETURN TO HOME /&gt;</a>
             </div>
 
         </section>
@@ -82,12 +94,9 @@
 
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
-        </div>
     </footer>
+
+    <script src="./js/matrix_effect.js"></script>
 
 </body>
 </html>
