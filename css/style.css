@@ -1,14 +1,23 @@
 /* General Styles */
 body {
-    font-family: 'Courier New', Courier, monospace; /* Font de terminal */
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Fons negre total */
-    color: #00ff00; /* TOT el text es veurà verd */
+
+    /* MODIFICACIÓ: Afegim la imatge amb un degradat fosc perquè es pugui llegir el text */
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://sectricity.com/wp-content/uploads/2022/02/What-is-a-hacker-and-how-to-protect-yourself.jpg');
+
+    background-size: cover;       /* La imatge cobreix tota la pantalla */
+    background-position: center;  /* Centrada */
+    background-attachment: fixed; /* Efecte de fons fix mentre fas scroll */
+
+    color: #00ff00;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    text-shadow: 0 0 2px #00ff00; /* Efecte de resplendor verd a les lletres */
+    text-shadow: 0 0 2px #00ff00;
 }
 /* Main Container (Pàgina Principal amb columna lateral - Usat per index.html) */
 .contingut-principal {
