@@ -1,14 +1,15 @@
 /* General Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Font de terminal */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000; /* Fons negre total */
+    color: #00ff00; /* TOT el text es veurà verd */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    text-shadow: 0 0 2px #00ff00; /* Efecte de resplendor verd a les lletres */
 }
-
 /* Main Container (Pàgina Principal amb columna lateral - Usat per index.html) */
 .contingut-principal {
     width: 90%;
@@ -120,10 +121,12 @@ body {
 }
 
 .descripcio-linies {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #00ff00; /* Canviem el negre per verd neó */
     margin: 5px 0;
     padding-bottom: 3px;
     line-height: 1.2;
+    color: #00ff00; /* Ens assegurem que el text sigui verd */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7); /* Efecte de brillantor */
 }
 
 .separador {
@@ -649,4 +652,16 @@ h1, h2, h3, h4 {
 }
 .submit-button-container button:hover {
     background-color: #fff;
+}
+/* Així es veuran els enllaços normalment */
+a {
+    color: #00ff00;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Fa que el canvi de color sigui suau */
+}
+
+/* Així es veuran quan posis el ratolí a sobre */
+a:hover {
+    color: #ffffff; /* Canvia a blanc o verd més brillant */
+    text-shadow: 0 0 10px #00ff00; /* Fa un efecte de llum */
 }
