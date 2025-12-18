@@ -7,7 +7,7 @@
     <title>Projects Portfolio - Matrix Mode</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body id="top">
 
     <canvas id="matrixCanvas"></canvas>
 
@@ -35,8 +35,8 @@
                 <h1>Technical Projects Portfolio</h1>
             </div>
 
-            <p style="color: #0f0; font-family: monospace;">&gt; Loading technical modules...</p>
-            <p>Benvingut a l'índex principal de projectes. Aquí trobaràs una llista de tots els treballs tècnics realitzats.</p>
+            <p style="color: #0f0; font-family: monospace;">&gt; Accessing repository... OK</p>
+            <p>Benvingut a l'índex principal de projectes. Aquí trobaràs una visió general de tots els mòduls tècnics.</p>
 
             <hr class="separador">
 
@@ -44,12 +44,22 @@
                 <h2>System & Development Projects:</h2>
                 <ul>
                     <li>
-                        <h3><a href="linux_project.html">Linux Project: System Administration & Security</a></h3>
-                        <p>Focuses on CLI, permissions, and basic scripting.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3><a href="linux_project.html">Linux Project: System Administration & Security</a></h3>
+                                <p>Focuses on CLI, permissions, and basic scripting.</p>
+                            </div>
+                            <div class="cercle linux-image">sudo</div>
+                        </div>
                     </li>
                     <li>
-                        <h3><a href="css_project.html">CSS Project: Modern Layout and Responsive Design</a></h3>
-                        <p>Deep dive into Flexbox, CSS Grid, and Media Queries.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3><a href="css_project.html">CSS Project: Modern Layout and Responsive Design</a></h3>
+                                <p>Deep dive into Flexbox, CSS Grid, and Media Queries.</p>
+                            </div>
+                            <div class="cercle css-image">.style</div>
+                        </div>
                     </li>
                 </ul>
 
@@ -68,7 +78,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div>
                                 <h3><a href="sql_project.html">SQL Project: Database Management</a></h3>
-                                <p>Learning how to design databases and write complex SELECT queries.</p>
+                                <p>Learning how to design databases and write complex queries.</p>
                             </div>
                             <div class="cercle sql-image">SELECT</div>
                         </div>
@@ -77,7 +87,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div>
                                 <h3><a href="powershell_project.html">PowerShell Project: Windows Management</a></h3>
-                                <p>Scripting for Windows environments and Active Directory automation.</p>
+                                <p>Scripting for Windows environments and AD automation.</p>
                             </div>
                             <div class="cercle powershell-image">PS&gt;_</div>
                         </div>
@@ -86,7 +96,12 @@
             </div>
 
             <div class="menu-navegacio-pagines-detall">
-                <a href="index.html" style="color: #0f0; text-decoration: none;">&lt; RETURN TO HOME /&gt;</a>
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Terminal Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
+                    <a href="satisfaction_form.html" style="color: #0f0; text-decoration: none;">[ ./run_survey ]</a>
+                    <a href="#top" style="color: #0f0; text-decoration: none;">[ ↑ top ]</a>
+                </div>
             </div>
 
         </section>

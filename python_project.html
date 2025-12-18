@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dedicated page for the Python Project focusing on data and automation.">
-    <title>Python Project Details</title>
+    <title>Python Project Details - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
-    </head>
-<body>
+</head>
+<body id="top">
     <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;div class="code"&gt;
+                &lt;script src="python.py"&gt;
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -21,13 +22,11 @@
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contingut-principal-detall">
-
         <section class="projecte-detall">
 
             <div class="titol-detall">
@@ -35,8 +34,8 @@
             </div>
 
             <div class="project-part part-1">
-                <h2>Part 1: Python Basics and Data Handling</h2>
                 <div class="content-lines">
+                    <h2>Part 1: Python Basics and Data Handling</h2>
                     <p class="descripcio-linies">Understanding Python syntax, indentation, and comments.</p>
                     <p class="descripcio-linies">Using fundamental data types: strings, integers, floats, and booleans.</p>
                     <p class="descripcio-linies">Implementing essential data structures: Lists, Tuples, Dictionaries, and Sets.</p>
@@ -46,8 +45,8 @@
             </div>
 
             <div class="project-part part-2">
-                <h2>Part 2: Logic Control and Modular Programming</h2>
                 <div class="content-lines">
+                    <h2>Part 2: Logic Control and Modular Programming</h2>
                     <p class="descripcio-linies">Implementing conditional statements (if/elif/else) for logic control.</p>
                     <p class="descripcio-linies">Using iterative structures (for and while loops) for repetition.</p>
                     <p class="descripcio-linies">Creating and calling custom functions for code reusability.</p>
@@ -57,8 +56,8 @@
             </div>
 
             <div class="project-part part-3">
-                <h2>Part 3: Practical Automation and Libraries</h2>
                 <div class="content-lines">
+                    <h2>Part 3: Practical Automation and Libraries</h2>
                     <p class="descripcio-linies">Installing and managing external packages using pip.</p>
                     <p class="descripcio-linies">Introduction to Pandas for structured data manipulation.</p>
                     <p class="descripcio-linies">Automating file system tasks using the 'os' and 'shutil' modules.</p>
@@ -68,7 +67,13 @@
             </div>
 
             <div class="menu-navegacio-pagines-detall">
-                menu de navegacion entre paginas
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Browse Other Modules</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux_admin ]</a>
+                    <a href="sql_project.html" style="color: #0f0; text-decoration: none;">[ ./sql_db ]</a>
+                    <a href="css_project.html" style="color: #0f0; text-decoration: none;">[ ./css_design ]</a>
+                    <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
+                </div>
             </div>
 
         </section>
@@ -76,12 +81,8 @@
 
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
-        </div>
     </footer>
+
     <script src="./js/matrix_effect.js"></script>
 </body>
 </html>

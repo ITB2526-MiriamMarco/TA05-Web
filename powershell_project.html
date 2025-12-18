@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Detailed information on the PowerShell project, focused on Windows system administration and automation.">
-    <title>PowerShell Project: Windows System Management</title>
+    <title>PowerShell Project - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body id="top">
     <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;div class="code"&gt;
+                PS C:\Users\Admin&gt; Get-ExecutionPolicy
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -21,7 +22,6 @@
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
@@ -29,50 +29,66 @@
     <main class="contingut-principal-detall">
         <section class="projecte-detall">
             <div class="titol-detall">
-                <h1>PowerShell Project: Windows System Management</h1>
+                <h1>PowerShell: Windows System Management</h1>
             </div>
 
-            <p class="project-summary">
-                This project covers essential PowerShell scripting for managing Windows environments, focusing on Active Directory (AD) tasks, system configuration, and automating routine administrative processes.
+            <p class="project-summary" style="font-family: monospace; color: #0f0;">
+                &gt; Loading Windows PowerShell modules... [OK]
             </p>
 
-            <hr>
-
-            <div class="project-sections">
-                <h2>Objectives and Modules</h2>
-
-                <article>
-                    <h3>Module 1: Basic Cmdlets and Scripting Fundamentals</h3>
-                    <p>Introduction to the PowerShell Integrated Scripting Environment (ISE). Learning core cmdlets like Get-Command, Get-Help, and piping outputs. Understanding variables and control flow (if/else, loops).</p>
+            <div class="project-part part-1">
+                <div class="content-lines">
+                    <h2>Part 1: Basic Cmdlets and Scripting Fundamentals</h2>
+                    <p class="descripcio-linies">Introduction to the PowerShell Integrated Scripting Environment (ISE).</p>
+                    <p class="descripcio-linies">Learning core cmdlets: Get-Command, Get-Help, and Get-Process.</p>
+                    <p class="descripcio-linies">Understanding the Power of the Pipeline (|) and Object selection.</p>
                     <pre><code># Example: Check service status
 Get-Service -Name "Spooler" | Select-Object Name, Status</code></pre>
-                </article>
-
-                <article>
-                    <h3>Module 2: Active Directory Management</h3>
-                    <p>Using the Active Directory module for PowerShell. Automating user creation (New-ADUser), managing groups (Add-ADGroupMember), and querying AD properties for auditing purposes.</p>
-                </article>
-
-                <article>
-                    <h3>Module 3: System and File Management</h3>
-                    <p>Working with the file system (New-Item, Copy-Item) and registry. Performing remote management tasks using PowerShell Remoting (Invoke-Command) to manage systems across the network.</p>
-                </article>
+                </div>
+                <div class="cercle powershell-image">Get-</div>
             </div>
+
+            <div class="project-part part-2">
+                <div class="content-lines">
+                    <h2>Part 2: Active Directory (AD) Automation</h2>
+                    <p class="descripcio-linies">Using the RSAT Active Directory module for PowerShell.</p>
+                    <p class="descripcio-linies">Automating user creation (New-ADUser) and group management.</p>
+                    <p class="descripcio-linies">Querying AD properties for security auditing and reporting.</p>
+                </div>
+                <div class="cercle powershell-image">AD-User</div>
+            </div>
+
+
+
+            <div class="project-part part-3">
+                <div class="content-lines">
+                    <h2>Part 3: System and Remote Management</h2>
+                    <p class="descripcio-linies">Working with the file system (New-Item) and Windows Registry.</p>
+                    <p class="descripcio-linies">Implementing PowerShell Remoting (WinRM) for network tasks.</p>
+                    <p class="descripcio-linies">Executing tasks across multiple systems with Invoke-Command.</p>
+                </div>
+                <div class="cercle powershell-image">PS-Rem</div>
+            </div>
+
+
 
             <div class="menu-navegacio-pagines-detall">
-                <a href="projects_portfolio.html">← Return to Projects Portfolio</a>
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ PowerShell Terminal Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd C:\Home ]</a>
+                    <a href="packet_tracer_project.html" style="color: #0f0; text-decoration: none;">[ ./networking ]</a>
+                    <a href="sql_project.html" style="color: #0f0; text-decoration: none;">[ ./databases ]</a>
+                    <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
+                </div>
             </div>
+
         </section>
     </main>
 
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
-        </div>
     </footer>
+
     <script src="./js/matrix_effect.js"></script>
 </body>
 </html>

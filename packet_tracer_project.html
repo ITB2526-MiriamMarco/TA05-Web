@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Detailed information on the Packet Tracer network simulation project, covering subnetting, routing, and VLAN configuration.">
-    <title>Packet Tracer Project: Network Simulation</title>
+    <title>Packet Tracer Project - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body id="top">
     <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;div class="code"&gt;
+                &lt;config-if&gt; # switchport mode trunk
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -21,7 +22,6 @@
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
@@ -29,50 +29,64 @@
     <main class="contingut-principal-detall">
         <section class="projecte-detall">
             <div class="titol-detall">
-                <h1>Packet Tracer Project: Network Simulation and Configuration</h1>
+                <h1>Packet Tracer: Network Simulation & Configuration</h1>
             </div>
 
-            <p class="project-summary">
-                This project involves designing and implementing a multi-subnet network using Cisco Packet Tracer. Key focus areas include IP addressing, VLAN configuration, static routing, and basic network services.
+            <p class="project-summary" style="font-family: monospace; color: #0f0;">
+                &gt; Status: Connection Established. Subnets Active.
             </p>
 
-            <hr>
-
-            <div class="project-sections">
-                <h2>Objectives and Modules</h2>
-
-                <article>
-                    <h3>Module 1: Subnetting and IP Addressing</h3>
-                    <p>Mastering Classless Inter-Domain Routing (CIDR) and Variable Length Subnet Masking (VLSM) to efficiently divide a large network block into smaller subnets. Assigning static IP addresses to end devices and interfaces.</p>
-
-                </article>
-
-                <article>
-                    <h3>Module 2: Router Configuration (Static and Dynamic Routing)</h3>
-                    <p>Configuring interfaces on routers. Implementing static routes to ensure connectivity between different subnets. Introduction to dynamic routing protocols like RIP or OSPF.</p>
-                    <pre><code>Router(config)# ip route 192.168.2.0 255.255.255.0 192.168.1.2</code></pre>
-                </article>
-
-                <article>
-                    <h3>Module 3: Switch Configuration (VLANs)</h3>
-                    <p>Configuring switches to segment the network using Virtual Local Area Networks (VLANs). Setting up access ports and trunking between switches and routers (Router-on-a-Stick).</p>
-                </article>
+            <div class="project-part part-1">
+                <div class="content-lines">
+                    <h2>Part 1: Subnetting and IP Addressing</h2>
+                    <p class="descripcio-linies">Mastering Classless Inter-Domain Routing (CIDR) and VLSM.</p>
+                    <p class="descripcio-linies">Efficiently dividing large network blocks into functional subnets.</p>
+                    <p class="descripcio-linies">Assigning static IP addresses to end devices and gateway interfaces.</p>
+                </div>
+                <div class="cercle" style="border-color: #0f0; color: #0f0;">/24</div>
             </div>
+
+
+
+            <div class="project-part part-2">
+                <div class="content-lines">
+                    <h2>Part 2: Router Configuration (Static & Dynamic)</h2>
+                    <p class="descripcio-linies">Configuring interfaces and default gateways on Cisco routers.</p>
+                    <p class="descripcio-linies">Implementing static routes for inter-subnet communication.</p>
+                    <p class="descripcio-linies">Introduction to dynamic protocols like RIP and OSPF.</p>
+                    <pre><code>Router(config)# ip route 192.168.2.0 255.255.255.0 192.168.1.2</code></pre>
+                </div>
+                <div class="cercle" style="border-color: #0f0; color: #0f0;">OSPF</div>
+            </div>
+
+            <div class="project-part part-3">
+                <div class="content-lines">
+                    <h2>Part 3: Switch Configuration (VLANs & Trunking)</h2>
+                    <p class="descripcio-linies">Segmenting the network using Virtual Local Area Networks (VLANs).</p>
+                    <p class="descripcio-linies">Setting up access ports and trunking between devices.</p>
+                    <p class="descripcio-linies">Configuring 'Router-on-a-Stick' for inter-VLAN routing.</p>
+                </div>
+                <div class="cercle" style="border-color: #0f0; color: #0f0;">VLAN</div>
+            </div>
+
+
 
             <div class="menu-navegacio-pagines-detall">
-                <a href="projects_portfolio.html">← Return to Projects Portfolio</a>
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Network Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
+                    <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux_security ]</a>
+                    <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
+                </div>
             </div>
+
         </section>
     </main>
 
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
-        </div>
     </footer>
+
     <script src="./js/matrix_effect.js"></script>
 </body>
 </html>

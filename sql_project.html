@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Detailed information on the SQL project, covering database design, CRUD operations, and complex queries.">
-    <title>SQL Project: Database Management</title>
+    <title>SQL Project - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body id="top">
     <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;div class="code"&gt;
+                SELECT * FROM projects WHERE status = 'complete';
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -21,61 +22,76 @@
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contingut-principal-detall">
-
         <section class="projecte-detall">
-
             <div class="titol-detall">
-                <h1>SQL Project: Database Management and Queries</h1>
+                <h1>SQL: Database Management and Queries</h1>
             </div>
 
-            <p class="project-summary">
-                This project focuses on the fundamental concepts of Relational Database Management Systems (RDBMS) using SQL. The goal is to design, implement, and query a database schema for a practical scenario (e.g., a library system or e-commerce inventory).
+            <p class="project-summary" style="font-family: monospace; color: #0f0;">
+                &gt; Connecting to RDBMS... [SUCCESS]
             </p>
 
-            <hr>
+            <div class="project-part part-1">
+                <div class="content-lines">
+                    <h2>Part 1: Database Design (ER Diagrams)</h2>
+                    <p class="descripcio-linies">Translating real-world concepts into Entity-Relationship (ER) models.</p>
+                    <p class="descripcio-linies">Understanding normalization (1NF, 2NF, 3NF) to reduce data redundancy.</p>
+                    <p class="descripcio-linies">Defining entities, attributes, and relationships (1:N, N:M).</p>
+                </div>
+                <div class="cercle sql-image">ERD</div>
+            </div>
 
-            <div class="project-sections">
-
-                <h2>Objectives and Modules</h2>
-
-                <article>
-                    <h3>Module 1: Database Design (ER Diagrams)</h3>
-                    <p>Understanding database normalization (1NF, 2NF, 3NF) and translating real-world concepts into Entity-Relationship (ER) models. This involves defining entities, attributes, and relationships (one-to-many, many-to-many).</p>
 
 
-[Image of a simple Entity-Relationship Diagram]
-
-                </article>
-
-                <article>
-                    <h3>Module 2: Data Definition Language (DDL)</h3>
-                    <p>Creating and managing the structure of the database using DDL commands (CREATE TABLE, ALTER TABLE, DROP TABLE). Defining primary keys, foreign keys, and constraints to ensure data integrity.</p>
+            <div class="project-part part-2">
+                <div class="content-lines">
+                    <h2>Part 2: Data Definition Language (DDL)</h2>
+                    <p class="descripcio-linies">Managing database structure with CREATE, ALTER, and DROP.</p>
+                    <p class="descripcio-linies">Implementing Primary Keys, Foreign Keys, and Constraints.</p>
                     <pre><code>CREATE TABLE Customers (
     customer_id INT PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100) UNIQUE
 );</code></pre>
-                </article>
-
-                <article>
-                    <h3>Module 3: Data Manipulation Language (DML / CRUD)</h3>
-                    <p>Learning the four core operations: Create, Read, Update, and Delete (CRUD). Using DML commands (INSERT, SELECT, UPDATE, DELETE) to manage data records within the tables.</p>
-                </article>
-
-                <article>
-                    <h3>Module 4: Advanced Queries (Joins and Aggregation)</h3>
-                    <p>Writing complex queries using INNER JOIN, LEFT JOIN, and RIGHT JOIN to combine data from multiple tables. Using aggregate functions (COUNT, SUM, AVG, MAX, MIN) and GROUP BY clauses for reporting and analysis.</p>
-                </article>
+                </div>
+                <div class="cercle sql-image">CREATE</div>
             </div>
 
+            <div class="project-part part-3">
+                <div class="content-lines">
+                    <h2>Part 3: Data Manipulation (CRUD Operations)</h2>
+                    <p class="descripcio-linies">Executing core operations: Create, Read, Update, and Delete.</p>
+                    <p class="descripcio-linies">Using INSERT, SELECT, UPDATE, and DELETE for record management.</p>
+                    <p class="descripcio-linies">Ensuring data integrity through transaction control.</p>
+                </div>
+                <div class="cercle sql-image">CRUD</div>
+            </div>
+
+            <div class="project-part part-4">
+                <div class="content-lines">
+                    <h2>Part 4: Advanced Queries and Aggregation</h2>
+                    <p class="descripcio-linies">Combining data using INNER, LEFT, and RIGHT JOINS.</p>
+                    <p class="descripcio-linies">Using Aggregate functions: COUNT, SUM, AVG, MAX, MIN.</p>
+                    <p class="descripcio-linies">Implementing GROUP BY and HAVING for complex reporting.</p>
+                </div>
+                <div class="cercle sql-image">JOIN</div>
+            </div>
+
+
+
             <div class="menu-navegacio-pagines-detall">
-                <a href="projects_portfolio.html">← Return to Projects Portfolio</a>
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Database Terminal Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
+                    <a href="python_project.html" style="color: #0f0; text-decoration: none;">[ ./python_scripts ]</a>
+                    <a href="powershell_project.html" style="color: #0f0; text-decoration: none;">[ ./powershell_admin ]</a>
+                    <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
+                </div>
             </div>
 
         </section>
@@ -83,13 +99,8 @@
 
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
-        </div>
     </footer>
-<script src="./js/matrix_effect.js"></script>
 
+    <script src="./js/matrix_effect.js"></script>
 </body>
 </html>
