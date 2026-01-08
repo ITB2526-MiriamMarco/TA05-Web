@@ -782,3 +782,43 @@ body {
     /* El borde parece que emite luz */
     box-shadow: inset 0 0 15px rgba(0, 255, 0, 0.05);
 }
+/* Este contenedor cubre toda la pantalla y crea las líneas */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* Crea líneas horizontales de 2px */
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1000; /* Por encima de todo */
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none; /* Permite hacer click a través del filtro */
+}
+
+/* Efecto de parpadeo sutil de pantalla antigua */
+@keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.99; }
+    /* ... puedes añadir más variaciones ... */
+    100% { opacity: 1; }
+}
+
+body {
+    animation: flicker 0.15s infinite;
+}
+* {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="15" height="15" style="fill:rgba(0,255,0,0.5);stroke:%230f0;stroke-width:2"/></svg>'), auto;
+}
+
+/* Efecto para que los enlaces se iluminen más al tocarlos */
+a:hover {
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+    letter-spacing: 2px; /* El texto se expande un poco */
+    transition: all 0.2s ease;
+}

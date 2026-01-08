@@ -115,3 +115,22 @@ if (Math.random() > 0.99) {
     ctx.fillStyle = "rgba(0, 255, 0, 0.1)"; // Un flash verde muy rápido
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
+function triggerAlert() {
+    const originalColor = "#0f0";
+    ctx.fillStyle = "#f00"; // Cambio a rojo
+    ctx.shadowColor = "#f00";
+
+    // Un flash rápido en la pantalla
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Volver al verde tras 500ms
+    setTimeout(() => {
+        ctx.fillStyle = originalColor;
+        ctx.shadowColor = originalColor;
+    }, 500);
+}
+
+// Ejemplo: Se activa si presionan la tecla 'X' (de peligro)
+window.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'x') triggerAlert();
+});
