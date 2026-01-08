@@ -134,3 +134,25 @@ function triggerAlert() {
 window.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'x') triggerAlert();
 });
+function draw() {
+    // Fondo muy oscuro con estela
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0f0"; // Color de las letras de la lluvia
+    ctx.font = fontSize + "px monospace";
+
+    // Opcional: añade este brillo para que las letras del matrix se parezcan a la imagen
+    ctx.shadowBlur = 2;
+    ctx.shadowColor = "#0f0";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+        drops[i]++;
+    }
+}

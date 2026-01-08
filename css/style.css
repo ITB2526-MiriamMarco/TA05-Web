@@ -959,3 +959,31 @@ body {
     color: #fff !important;
     text-shadow: 0 0 10px #0f0;
 }
+.cercle {
+    width: 80px;            /* Un poco más grande para que quepa #!/bin/bash */
+    height: 80px;
+    border: 2px solid #0f0; /* Borde verde Matrix */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* ESTO HACE QUE LAS LETRAS SE VEAN CLARAS */
+    color: #fff;            /* Letras blancas para máximo contraste */
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;     /* Tamaño justo para que no se salga */
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.9); /* Fondo negro sólido para que no le pase la lluvia por detrás */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Brillo verde exterior */
+
+    transition: all 0.3s ease;
+    z-index: 5;             /* Por encima del canvas */
+}
+
+/* Efecto cuando pasas el ratón por el proyecto */
+.project-part:hover .cercle {
+    background: #0f0;       /* Fondo verde */
+    color: #000;            /* Letras negras */
+    transform: scale(1.1);
+}

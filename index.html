@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Main project page featuring coding and cybersecurity content with a Matrix effect.">
-    <meta name="keywords" content="web, project, design, html, css, coding, linux, cybersecurity">
-    <meta name="author" content="IA Helper">
-    <title>Code Projects - Matrix Design</title>
+    <meta name="description" content="Detalle de proyectos técnicos y scripts.">
+    <title>Proyectos - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="top">
-
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;div class="code"&gt;
+                SELECT * FROM projects WHERE status = 'complete';
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -29,88 +26,53 @@
         </nav>
     </header>
 
-    <main class="contingut-principal">
-
-        <aside class="columna-aside">
-            <div class="aside-content">
-                <h3>Cybersecurity: Risk & Security</h3>
-                <p style="font-family: monospace; color: #0f0; font-size: 0.9em;">&gt; System Status: Secure</p>
-
-                [Image placeholder]
-
-                <p>Cybersecurity protects systems and networks from digital attacks aimed at accessing or destroying sensitive information.</p>
-
-                <h4>Key Risk Activities:</h4>
-                <ul class="llista-riscos">
-                    <li><strong>Risk Analysis:</strong> Identifying vulnerabilities and potential threats.</li>
-                    <li><strong>Threat Monitoring:</strong> Real-time traffic analysis using SIEM tools.</li>
-                    <li><strong>Implementing Defenses:</strong> Firewalls, IDS, and encryption protocols.</li>
-                    <li><strong>Incident Response:</strong> Containing breaches and system recovery.</li>
-                    <li><strong>Security Audits:</strong> Regular penetration testing (Pentesting).</li>
-                    <li><strong>User Education:</strong> Training against Phishing and Social Engineering.</li>
-                </ul>
+    <main class="contingut-principal-detall">
+        <section class="projecte-detall">
+            <div class="titol-detall">
+                <h1>Sistemas y Scripting Avanzado</h1>
             </div>
-        </aside>
 
-        <section class="seccio-projectes">
+            <div class="project-part">
+                <div class="content-lines">
+                    <h2>Linux & Automation</h2>
+                    <p class="descripcio-linies">Creación de entornos automatizados y despliegue de scripts.</p>
+                    <p class="descripcio-linies">Configuración de entornos mediante consola Bash.</p>
+                </div>
+                <div class="cercle">#!/bin/bash</div>
+            </div>
 
-            <article class="projecte">
-                <div class="info-textual">
-                    <h2><a href="linux_project.html">Linux Project: System Administration</a></h2>
-                    <p class="descripcio-linies">Exploring core Linux distributions (Ubuntu, CentOS)</p>
-                    <p class="descripcio-linies">Basic command-line interface (CLI) and shell usage</p>
-                    <p class="descripcio-linies">User management and file permissions (chmod/chown)</p>
-                    <p class="descripcio-linies">Introduction to automation with Bash scripting</p>
-                    <hr class="separador">
+            <div class="project-part">
+                <div class="content-lines">
+                    <h2>Lógica de Control</h2>
+                    <p class="descripcio-linies">Programación de condicionales y flujos de trabajo inteligentes.</p>
+                    <p class="descripcio-linies">Gestión de errores y validación de comandos.</p>
                 </div>
-                <div class="elements-visuals">
-                    <div class="cercle linux-image">if (cmd)</div>
-                    <div class="cercle linux-image">sudo</div>
-                    <div class="cercle linux-image">#!/bin/sh</div>
-                </div>
-            </article>
+                <div class="cercle">if<br>(cmd)</div>
+            </div>
 
-            <article class="projecte">
-                <div class="info-textual">
-                    <h2><a href="css_project.html">CSS Project: Modern Layout & Design</a></h2>
-                    <p class="descripcio-linies">Layout techniques using Flexbox and CSS Grid</p>
-                    <p class="descripcio-linies">Understanding the CSS Box Model and positioning</p>
-                    <p class="descripcio-linies">Responsive design using advanced Media Queries</p>
-                    <p class="descripcio-linies">Transitions, animations, and pseudo-elements</p>
-                    <hr class="separador">
+            <div class="project-part">
+                <div class="content-lines">
+                    <h2>Administración de Sistemas</h2>
+                    <p class="descripcio-linies">Gestión de privilegios y seguridad en servidores Linux.</p>
+                    <p class="descripcio-linies">Mantenimiento de bases de datos con acceso root.</p>
                 </div>
-                <div class="elements-visuals">
-                    <div class="cercle css-image">.class</div>
-                    <div class="cercle css-image">display:flex;</div>
-                    <div class="cercle css-image">@media</div>
-                </div>
-            </article>
+                <div class="cercle">sudo</div>
+            </div>
 
-            <section class="navegacio-pagines">
-                <div class="menu-navegacio-pagines">
-                    <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Terminal Navigation</h3>
-                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                        <a href="#top" style="color: #0f0; text-decoration: none;">[ ↑ Up ]</a>
-                        <a href="projects_portfolio.html" style="color: #0f0; text-decoration: none;">[ cd /projects ]</a>
-                        <a href="python_project.html" style="color: #0f0; text-decoration: none;">[ ./python ]</a>
-                        <a href="sql_project.html" style="color: #0f0; text-decoration: none;">[ ./sql ]</a>
-                        <a href="packet_tracer_project.html" style="color: #0f0; text-decoration: none;">[ ./networking ]</a>
-                    </div>
+            <div class="menu-navegacio-pagines-detall">
+                <h3>&gt;_ Terminal Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html">[ cd /home ]</a>
+                    <a href="projects_portfolio.html">[ cd .. ]</a>
                 </div>
-            </section>
-
+            </div>
         </section>
-
     </main>
 
     <footer class="peu-pagina">
         <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[LinkedIn]</a> | <a href="#">[GitHub]</a>
-        </div>
     </footer>
 
     <script src="./js/matrix_effect.js"></script>
-
 </body>
 </html>
