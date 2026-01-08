@@ -1044,3 +1044,65 @@ body {
     background: #0f0;
     color: #000;
 }
+/* Contenidor de Detalls (Dues columnes) */
+.container-flex {
+    display: flex;
+    flex-wrap: wrap; /* Permet que els elements baixin si no caben */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sidebar i Secció de projectes */
+.sidebar-info {
+    flex: 1 1 300px; /* Creix, s'encogeix i té una base de 300px */
+    min-width: 280px;
+}
+
+.projecte-detall {
+    flex: 3 1 600px; /* Ocupa més espai que la sidebar */
+    min-width: 300px;
+}
+
+/* Les targetes de l'índex (Grid auto-ajustable) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    /* 1. Capçalera i Menú */
+    .menu-navegacio-principal ul {
+        flex-direction: column; /* Menú en llista vertical */
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* 2. Secció de projectes */
+    .project-part {
+        flex-direction: column; /* El cercle baixa a sota del text */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .cercle {
+        width: 70px;  /* Fem el cercle una mica més petit en mòbil */
+        height: 70px;
+        min-width: 70px;
+        font-size: 0.7rem;
+    }
+
+    /* 3. Sidebar */
+    .sidebar-info {
+        position: relative; /* Deixa de ser sticky per no molestar al fer scroll */
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* 4. Títols */
+    h1 {
+        font-size: 1.5rem; /* Text més petit per evitar talls */
+    }
+}
