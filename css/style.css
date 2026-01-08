@@ -896,3 +896,66 @@ body::before {
     0% { opacity: 0.98; }
     100% { opacity: 1; }
 }
+/* 1. Base Nítida */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Negro profundo */
+    color: #0f0; /* Verde neón puro */
+    font-family: 'Segoe UI', Roboto, 'Courier New', monospace;
+    overflow-x: hidden;
+}
+
+/* 2. Contenedores de Proyectos (Efecto Elevación) */
+.project-part, .project-list ul li {
+    background: rgba(0, 40, 0, 0.15); /* Fondo muy sutil para ver el Matrix detrás */
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    backdrop-filter: blur(2px); /* Un ligero desenfoque del fondo */
+
+    /* Transición Premium (sin rebotes, solo fluida) */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+/* Efecto al pasar el cursor: El proyecto "avanza" */
+.project-part:hover, .project-list ul li:hover {
+    transform: translateY(-8px) scale(1.02); /* Sube y crece un poco */
+    border-color: #0f0;
+    background: rgba(0, 255, 0, 0.05); /* Se ilumina ligeramente */
+    box-shadow: 0 15px 40px rgba(0, 255, 0, 0.15); /* Sombra de luz verde */
+    z-index: 10;
+}
+
+/* 3. Círculos con estilo HUD (Heads-Up Display) */
+.cercle {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.project-part:hover .cercle, .project-list ul li:hover .cercle {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 20px #0f0;
+    transform: scale(1.1);
+}
+
+/* 4. Navegación Terminal [ cd /home ] */
+.menu-navegacio-pagines-detall a {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu-navegacio-pagines-detall a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 10px #0f0;
+}
