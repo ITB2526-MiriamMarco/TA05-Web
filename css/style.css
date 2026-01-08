@@ -822,3 +822,77 @@ a:hover {
     letter-spacing: 2px; /* El texto se expande un poco */
     transition: all 0.2s ease;
 }
+/* 1. Reset y Estética Base */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    /* Animación de parpadeo de monitor antiguo */
+    animation: flicker 0.15s infinite;
+}
+
+/* 2. Filtro de Líneas de Escaneo (Scanlines) */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 9999;
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+}
+
+/* 3. Canvas de Fondo */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 4. Efecto de Elevación en Proyectos (Lo que pediste) */
+.project-part, .project-list ul li {
+    background: rgba(0, 20, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(3px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-part:hover, .project-list ul li:hover {
+    transform: scale(1.03) translateY(-10px);
+    border-color: #0f0;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+    z-index: 10;
+}
+
+/* 5. Círculos Interactivos */
+.cercle {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.project-part:hover .cercle, .project-list ul li:hover .cercle {
+    transform: rotate(360deg) scale(1.1);
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
+
+/* 6. Animaciones */
+@keyframes flicker {
+    0% { opacity: 0.98; }
+    100% { opacity: 1; }
+}
