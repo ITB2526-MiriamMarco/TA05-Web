@@ -84,3 +84,34 @@ setInterval(() => {
     const titulo = document.querySelector('h1');
     if(titulo) glitchText(titulo);
 }, 7000);
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZｦｱｳｴｵｶｷｸｹｺｻｼｽｾｿ1234567890";
+
+document.querySelectorAll("h1, h2, .descripcio-linies").forEach(element => {
+    element.onmouseover = event => {
+        let iteration = 0;
+        const originalValue = event.target.innerText;
+
+        const interval = setInterval(() => {
+            event.target.innerText = originalValue
+                .split("")
+                .map((letter, index) => {
+                    if(index < iteration) {
+                        return originalValue[index];
+                    }
+                    return letters[Math.floor(Math.random() * 52)];
+                })
+                .join("");
+
+            if(iteration >= originalValue.length) {
+                clearInterval(interval);
+            }
+
+            iteration += 1 / 3;
+        }, 30);
+    };
+});
+// Simula un fallo de energía o interferencia sutil
+if (Math.random() > 0.99) {
+    ctx.fillStyle = "rgba(0, 255, 0, 0.1)"; // Un flash verde muy rápido
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}

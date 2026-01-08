@@ -767,3 +767,18 @@ body {
     font-family: monospace;
     transition: all 0.4s ease; /* Para que el círculo también reaccione suavemente */
 }
+.project-part, .project-list ul li {
+    /* Efecto de cristal esmerilado (Glassmorphism) */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    /* Degradado sutil para dar volumen */
+    background: linear-gradient(
+        135deg,
+        rgba(0, 50, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.9) 100%
+    );
+
+    /* El borde parece que emite luz */
+    box-shadow: inset 0 0 15px rgba(0, 255, 0, 0.05);
+}
