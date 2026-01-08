@@ -987,3 +987,60 @@ body {
     color: #000;            /* Letras negras */
     transform: scale(1.1);
 }
+/* Grid de Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjetas */
+.project-card {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    padding: 25px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    border-color: #0f0;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    transform: translateY(-10px);
+    background: rgba(0, 40, 0, 0.8);
+}
+
+.card-header {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #0f0;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.tags {
+    font-size: 0.75rem;
+    color: #0f0;
+    opacity: 0.7;
+    margin: 10px 0;
+}
+
+.status-tag {
+    display: inline-block;
+    border: 1px solid #0f0;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    margin-top: 15px;
+}
+
+.project-card:hover .status-tag {
+    background: #0f0;
+    color: #000;
+}
