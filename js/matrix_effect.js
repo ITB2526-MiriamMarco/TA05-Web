@@ -62,3 +62,25 @@ function draw() {
 
 // 4. Ejecución (aprox. 30 fotogramas por segundo)
 setInterval(draw, 35);
+function glitchText(elemento) {
+    const textoOriginal = elemento.innerText;
+    const letras = "ｦｱｳｴｵｶｷｸｹｺ012345";
+
+    let interval = setInterval(() => {
+        elemento.innerText = textoOriginal
+            .split("")
+            .map(() => letras.charAt(Math.floor(Math.random() * letras.length)))
+            .join("");
+    }, 50);
+
+    setTimeout(() => {
+        clearInterval(interval);
+        elemento.innerText = textoOriginal;
+    }, 500); // El glitch dura medio segundo
+}
+
+// Se activa solo de vez en cuando (cada 5-10 segundos)
+setInterval(() => {
+    const titulo = document.querySelector('h1');
+    if(titulo) glitchText(titulo);
+}, 7000);
