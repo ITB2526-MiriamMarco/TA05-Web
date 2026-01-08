@@ -674,3 +674,27 @@ a:hover {
     color: #ffffff; /* Canvia a blanc o verd més brillant */
     text-shadow: 0 0 10px #00ff00; /* Fa un efecte de llum */
 }
+/* Importante para que el Matrix se vea de fondo */
+body {
+    background-color: #000;
+    color: #0f0;
+    margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Esto lo envía detrás de todo el texto */
+    display: block;
+}
+
+/* Estilo para que el texto parezca terminal */
+.contingut-principal-detall {
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro con algo de transparencia */
+    border: 1px solid #0f0;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+}

@@ -1,74 +1,64 @@
-// Aquest codi dibuixa l'efecte de pluja de codi utilitzant l'element Canvas
+/**
+ * Matrix Rain Effect
+ * Autor: IA Helper (for Code Projects Portfolio)
+ */
 
 const canvas = document.getElementById('matrixCanvas');
-if (canvas) {
-    const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
-    // 1. Definir mida i caràcters
-    let W = canvas.width = window.innerWidth;
-    let H = canvas.height = window.innerHeight;
-    const font_size = 14; // Mida de font més petita per més densitat
-    const columns = W / font_size;
-
-    // Caràcters per a la pluja de codi
-    const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}:"<>?|~`-=[]\;,./';
-
-    // Array per fer un seguiment de la posició Y de cada columna
-    const drops = [];
-
-    // Inicialitzar cada columna a la posició Y=1
-    for (let i = 0; i < columns; i++) {
-        drops[i] = 1;
-    }
-
-    // 2. La funció de dibuix (loop principal)
-    function draw() {
-        // Fons negre semitransparent (augmentem l'opacitat a 0.1 per un rastre més curt)
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-        ctx.fillRect(0, 0, W, H);
-
-        // Color i font del text
-        ctx.fillStyle = '#0F0'; // Verd brillant
-        ctx.font = font_size + 'px monospace';
-
-        // Bucle per cada columna (drop)
-        for (let i = 0; i < drops.length; i++) {
-            // Seleccionar un caràcter aleatori
-            const text = characters.charAt(Math.floor(Math.random() * characters.length));
-
-            // Calcular la posició X i Y
-            const x = i * font_size;
-            const y = drops[i] * font_size;
-
-            // Dibuixar el caràcter
-            ctx.fillText(text, x, y);
-
-            // Si la "gota" ha arribat al fons (o més enllà), la reseteja a dalt
-            // Reduïm el límit aleatori a 0.95 (abans era 0.975) perquè es reiniciï més sovint
-            if (drops[i] * font_size > H && Math.random() > 0.95) {
-                drops[i] = 0;
-            }
-
-            // Incrementa la posició Y de la gota
-            drops[i]++;
-        }
-    }
-
-    // 3. Bucle d'animació (25ms = 40 FPS, més ràpid que els 33ms anteriors)
-    setInterval(draw, 25);
-
-    // 4. Ajustar el canvas si la finestra canvia de mida
-    window.addEventListener('resize', () => {
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-        // Reinicialitzar les gotes per la nova mida
-        drops.length = 0;
-        const new_columns = W / font_size;
-        for (let i = 0; i < new_columns; i++) {
-            drops[i] = 1;
-        }
-    });
-
-} else {
-    console.error("Canvas element with ID 'matrixCanvas' not found.");
+// 1. Configuración de pantalla
+function setupCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
+
+setupCanvas();
+window.addEventListener('resize', setupCanvas);
+
+// 2. Parámetros del efecto
+const characters = "ｦｱｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEF$+-*/=%<>#!";
+const fontSize = 16;
+const columns = Math.floor(canvas.width / fontSize);
+
+// Creamos un array para las gotas (una por columna)
+// drops[x] almacenará la posición actual en el eje Y de la gota en la columna x
+const drops = [];
+for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+}
+
+// 3. Función de dibujo principal
+function draw() {
+    // Fondo negro semitransparente para dejar el rastro de las letras
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Estilo de las letras
+    ctx.fillStyle = "#0f0"; // Verde neón
+    ctx.font = fontSize + "px monospace";
+
+    // Opcional: añade un poco de brillo (glow)
+    ctx.shadowBlur = 5;
+    ctx.shadowColor = "#0f0";
+
+    // Dibujar cada gota
+    for (let i = 0; i < drops.length; i++) {
+        // Elegir un carácter aleatorio
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+
+        // Dibujarlo en la posición (x, y)
+        // x = i * fontSize | y = drops[i] * fontSize
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        // Si la gota llega al final de la pantalla, reiniciarla arriba aleatoriamente
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        // Mover la gota hacia abajo
+        drops[i]++;
+    }
+}
+
+// 4. Ejecución (aprox. 30 fotogramas por segundo)
+setInterval(draw, 35);
