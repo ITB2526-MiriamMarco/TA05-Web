@@ -698,3 +698,25 @@ body {
     margin: 20px auto;
     max-width: 900px;
 }
+/* 1. Definimos el estado base del proyecto */
+.projecte, .project-part {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0, 255, 0, 0.3); /* Un borde verde sutil */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para que se vea el Matrix detrás */
+}
+
+/* 2. El efecto cuando el cursor está encima (hover) */
+.projecte:hover, .project-part:hover {
+    /* El elemento avanza hacia el usuario (escala 1.05 = 5% más grande) */
+    transform: translateY(-10px) scale(1.03);
+
+    /* Cambiamos el borde a un verde brillante */
+    border-color: #0f0;
+
+    /* Añadimos un resplandor neón (glow) */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+
+    /* Aseguramos que el elemento que crece se vea por encima de los demás */
+    z-index: 10;
+}
