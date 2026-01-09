@@ -3,48 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Modern Design - Details</title>
-    <link rel="stylesheet" href="./css/style.css?v=3">
+    <meta name="description" content="Dedicated page for the CSS Project.">
+    <title>CSS Project Details - Code Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="top">
-    <div id="boot-screen">
-        <div id="boot-text"></div>
-        <span class="cursor">_</span>
-    </div>
+<div id="boot-screen">
+    <div id="boot-text"></div>
+    <span class="cursor">_</span>
+</div>
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
+        <div class="logo-container">
+            <div class="code-image-simulation">
+                &lt;style&gt; .design { color: neon; } &lt;/style&gt;
+            </div>
+        </div>
         <nav class="menu-navegacio-principal">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects_portfolio.html">Projects</a></li>
+                <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contingut-principal-detall">
         <section class="projecte-detall">
-            <h1>&gt; Modern Layout & Design</h1>
-            <p>Mastering Flexbox, Grid, and Responsive Web Design.</p>
 
-            <hr class="separador">
+            <div class="titol-detall">
+                <h1>CSS Project: In-depth Layout and Styling</h1>
+                <p style="text-align: center; margin-top: -15px;">
+                    <a href="http://externa.com/css-guide" target="_blank" style="color: #0f0; font-size: 0.8em;">[ External Resource Access ]</a>
+                </p>
+            </div>
 
-            <h3>Further Navigation:</h3>
-            <div class="project-list">
-                <article class="projecte proyecto-desactivado">
-                    <div class="info-textual">
-                        <h3><a href="javascript:void(0);" class="enllac-principal">JavaScript Engine</a></h3>
-                        <p class="descripcio-linies">Module encrypted. Requires further clearance.</p>
-                    </div>
-                    <div class="cercle">OFFLINE</div>
-                </article>
+            <div class="project-part part-1">
+                <div class="content-lines">
+                    <h2>Part 1: Core Selectors and Properties</h2>
+                    <p class="descripcio-linies">Understanding Type, Class, ID, and Attribute selectors.</p>
+                    <p class="descripcio-linies">Specificity and the Cascade order in styling.</p>
+                    <p class="descripcio-linies">Managing Box Model: margin, border, padding, and content.</p>
+                    <p class="descripcio-linies">Basic properties: color, font-size, background.</p>
+                </div>
+                <div class="cercle css-image">#ID</div>
+            </div>
+
+            <div class="project-part part-2">
+                <div class="content-lines">
+                    <h2>Part 2: Flexbox and Grid</h2>
+                    <p class="descripcio-linies">Implementing one-dimensional layouts with Flexbox ('justify-content', 'align-items').</p>
+                    <p class="descripcio-linies">Creating complex structures with CSS Grid ('grid-template-columns').</p>
+                    <p class="descripcio-linies">Differences between inline-block and block elements.</p>
+                    <p class="descripcio-linies">Positioning schemes (relative, absolute, fixed, sticky).</p>
+                </div>
+                <div class="cercle css-image">grid</div>
+            </div>
+
+            <div class="project-part part-3">
+                <div class="content-lines">
+                    <h2>Part 3: Responsive Design and Animations</h2>
+                    <p class="descripcio-linies">Using Media Queries to adapt layouts for different screens.</p>
+                    <p class="descripcio-linies">Introduction to Transitions and basic Keyframe animations.</p>
+                    <p class="descripcio-linies">Use of pseudo-classes (:hover, :focus) and pseudo-elements.</p>
+                    <p class="descripcio-linies">Using CSS variables with '--property-name'.</p>
+                </div>
+                <div class="cercle css-image">@keyframes</div>
             </div>
 
             <div class="menu-navegacio-pagines-detall">
-                <a href="index.html" style="color: #0f0; text-decoration: none;">[ exit --force ]</a>
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Execute Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
+                    <a href="python_project.html" style="color: #0f0; text-decoration: none;">[ ./python ]</a>
+                    <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux ]</a>
+                    <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
+                </div>
             </div>
+
         </section>
     </main>
-    <script src="./js/matrix_effect.js?v=3"></script>
+
+    <footer class="peu-pagina">
+        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="./js/matrix_effect.js"></script>
 </body>
 </html>

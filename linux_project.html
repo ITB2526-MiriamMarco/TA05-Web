@@ -3,62 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux System Administration - Details</title>
-    <link rel="stylesheet" href="./css/style.css?v=3">
+    <meta name="description" content="Dedicated page for the Linux Project focusing on administration and security.">
+    <title>Linux Project Details - Code Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="top">
-    <div id="boot-screen">
-        <div id="boot-text"></div>
-        <span class="cursor">_</span>
-    </div>
+<div id="boot-screen">
+    <div id="boot-text"></div>
+    <span class="cursor">_</span>
+</div>
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
+        <div class="logo-container">
+            <div class="code-image-simulation">
+                &lt;ssh user@linux-server&gt;
+            </div>
+        </div>
         <nav class="menu-navegacio-principal">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects_portfolio.html">Projects</a></li>
-                <li><a href="satisfaction_form.html">Form</a></li>
+                <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contingut-principal-detall">
         <section class="projecte-detall">
-            <h1>&gt; Linux System Administration</h1>
-            <p style="color: #0f0; margin-bottom: 20px;">[ Module_Status: STABLE ]</p>
-            
-            <div class="detall-text">
-                <p>Detailed documentation about Linux kernel, shell scripting, and security hardening.</p>
+
+            <div class="titol-detall">
+                <h1>Linux Project: In-depth Exploration</h1>
+            </div>
+
+            <div class="project-part part-1">
+                <div class="content-lines">
+                    <h2>Part 1: Linux Command Line Interface (CLI)</h2>
+                    <p class="descripcio-linies">Using basic commands like 'ls', 'cd', 'pwd', and 'man'.</p>
+                    <p class="descripcio-linies">Understanding file system hierarchy (/, /home, /etc, /var).</p>
+                    <p class="descripcio-linies">Input/Output Redirection (>, >>, <, |).</p>
+                    <p class="descripcio-linies">Command History and shortcuts (Ctrl+R, arrow keys).</p>
                 </div>
+                <div class="cercle linux-image">CLI</div>
+            </div>
 
-            <hr class="separador">
+            <div class="project-part part-2">
+                <div class="content-lines">
+                    <h2>Part 2: User Management and Permissions</h2>
+                    <p class="descripcio-linies">Creating, modifying, and deleting user accounts ('useradd', 'usermod').</p>
+                    <p class="descripcio-linies">Group management ('groupadd', 'groupdel').</p>
+                    <p class="descripcio-linies">Understanding file permissions (rwx) and octal notation (777).</p>
+                    <p class="descripcio-linies">Changing permissions and ownership ('chmod', 'chown').</p>
+                </div>
+                <div class="cercle linux-image">755</div>
+            </div>
 
-            <h3>Related Modules:</h3>
-            <div class="project-list">
-                <article class="projecte">
-                    <div class="info-textual">
-                        <h3><a href="css_project.html" class="enllac-principal">CSS Modern Layout</a></h3>
-                        <p class="descripcio-linies">Next available module in the sequence.</p>
-                    </div>
-                    <div class="cercle">NEXT</div>
-                </article>
-
-                <article class="projecte proyecto-desactivado">
-                    <div class="info-textual">
-                        <h3><a href="javascript:void(0);" class="enllac-principal">Advanced Networking</a></h3>
-                        <p class="descripcio-linies">Access Denied: Resource under development.</p>
-                    </div>
-                    <div class="cercle">LOCKED</div>
-                </article>
+            <div class="project-part part-3">
+                <div class="content-lines">
+                    <h2>Part 3: Networking and Package Management</h2>
+                    <p class="descripcio-linies">Configuration of network interfaces ('ip addr', 'ifconfig').</p>
+                    <p class="descripcio-linies">Using utilities like 'ping', 'ssh', 'scp'.</p>
+                    <p class="descripcio-linies">Managing services with 'systemctl'.</p>
+                    <p class="descripcio-linies">Installing/removing software with package managers (APT, YUM, DNF).</p>
+                </div>
+                <div class="cercle linux-image">ip addr</div>
             </div>
 
             <div class="menu-navegacio-pagines-detall">
-                <a href="projects_portfolio.html" style="color: #0f0; text-decoration: none;">[ cd .. /back ]</a>
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ System Navigation</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
+                    <a href="python_project.html" style="color: #0f0; text-decoration: none;">[ ./python ]</a>
+                    <a href="css_project.html" style="color: #0f0; text-decoration: none;">[ ./css ]</a>
+                    <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
+                </div>
             </div>
+
         </section>
     </main>
 
-    <script src="./js/matrix_effect.js?v=3"></script>
+    <footer class="peu-pagina">
+        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="./js/matrix_effect.js"></script>
 </body>
 </html>
