@@ -1178,3 +1178,134 @@ h1, h2, .descripcio-linies {
     min-height: 1.2em; /* Mantiene el espacio aunque el texto desaparezca un instante */
     transition: none;  /* Evita conflictos con animaciones de CSS */
 }
+/* 1. Hacemos que el contenedor sea la referencia de tamaño */
+.projecte {
+    position: relative; /* Indispensable */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 2. Estiramos el enlace para que cubra todo el rectángulo */
+.enllac-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5; /* Cubre todo el cuadro */
+}
+
+/* 3. Aseguramos que el texto sea legible y no tenga el subrayado azul feo */
+.enllac-principal {
+    text-decoration: none;
+    color: #0f0;
+}
+
+/* 4. Efecto visual: cuando el ratón esté en CUALQUIER parte del cuadro */
+.projecte:hover {
+    background: rgba(0, 255, 0, 0.1);
+    border-color: #0f0;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+/* 5. Iluminar el círculo también al hacer hover en el cuadro */
+.projecte:hover .cercle {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
+/* Contenedor de las tarjetas para que se vean ordenadas */
+.grid-proyectos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* La tarjeta (Rectángulo) */
+.projecte-card {
+    position: relative; /* Necesario para el enlace estirado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* El enlace que estiramos para cubrir todo el rectángulo */
+.enllac-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10; /* Se pone encima de todo el cuadro */
+}
+
+/* Estilos de hover para el rectángulo completo */
+.projecte-card:hover {
+    border-color: #0f0;
+    background: rgba(0, 255, 0, 0.05);
+    transform: translateX(10px); /* Efecto de desplazamiento a la derecha */
+}
+
+/* Animación del círculo al pasar por el rectángulo */
+.projecte-card:hover .cercle {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
+
+.enllac-principal {
+    text-decoration: none;
+    color: #0f0;
+}
+/* 1. Preparamos el contenedor del proyecto */
+.projecte {
+    position: relative; /* Clave para que el link no se salga del cuadro */
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 2. Estiramos el link para cubrir todo el rectángulo */
+.enllac-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10; /* Se pone por encima de textos e imágenes */
+}
+
+/* 3. Estilos de Hover (Cuando el ratón entra en el rectángulo) */
+.projecte:hover {
+    border-color: #0f0;
+    background: rgba(0, 255, 0, 0.1);
+    transform: scale(1.01); /* Un pequeño aumento para dar feedback */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+/* 4. Iluminar los círculos al pasar por el rectángulo */
+.projecte:hover .cercle {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
+
+/* Quitar el subrayado azul feo del link */
+.enllac-principal {
+    text-decoration: none;
+    color: #0f0;
+}
