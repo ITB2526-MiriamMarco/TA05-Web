@@ -1309,3 +1309,44 @@ h1, h2, .descripcio-linies {
     text-decoration: none;
     color: #0f0;
 }
+/* El contenedor del proyecto debe ser relativo */
+.projecte, .projecte-card {
+    position: relative; 
+    overflow: hidden; /* Asegura que nada sobresalga */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* LA SOLUCIÓN: El área de clic total */
+.enllac-principal::after {
+    content: "";
+    /* Estiramos el enlace a los 4 bordes del cuadrado */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Z-index alto para que esté por encima de textos, círculos y líneas */
+    z-index: 100; 
+}
+
+/* Efectos visuales cuando el ratón está en CUALQUIER punto del cuadrado */
+.projecte:hover, .projecte-card:hover {
+    background: rgba(0, 255, 0, 0.1);
+    border-color: #0f0;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Aseguramos que los círculos cambien de color al tocar el cuadrado */
+.projecte:hover .cercle, .projecte-card:hover .cercle {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 15px #0f0;
+}
