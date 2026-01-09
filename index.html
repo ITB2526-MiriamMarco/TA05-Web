@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Main project page featuring coding and cybersecurity content with a Matrix effect.">
+    <meta name="keywords" content="web, project, design, html, css, coding, linux, cybersecurity">
     <title>Code Projects - Matrix Design</title>
     <link rel="stylesheet" href="./css/style.css?v=3">
 </head>
@@ -17,7 +18,7 @@
 
     <header class="capcalera-principal">
         <div class="logo-container">
-            <div class="code-image-simulation">&lt;div class="code"&gt;</div>
+            <div class="code-image-simulation">&lt;div class="root_access"&gt;</div>
         </div>
         <nav class="menu-navegacio-principal">
             <ul>
@@ -32,15 +33,38 @@
     <main class="contingut-principal">
         <aside class="columna-aside">
             <div class="aside-content">
-                <h3>Cybersecurity: Risk & Security</h3>
-                <p style="font-family: monospace; color: #0f0; font-size: 0.9em;">&gt; System Status: Secure</p>
-                <div style="border: 1px solid #0f0; height: 100px; margin: 10px 0; display: flex; align-items: center; justify-content: center;">[SECURE_LAYER_V2]</div>
-                <p>La ciberseguridad protege sistemas y redes contra ataques digitales.</p>
+                <h3 class="descripcio-linies">Cybersecurity: Global Defense</h3>
+                <p style="font-family: monospace; color: #0f0; font-size: 0.85em; border-bottom: 1px solid #0f0; padding-bottom: 5px;">&gt; Status: Monitoring Traffic...</p>
+
+                <p>Cybersecurity is the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks. In a hyper-connected world, the complexity of these threats grows exponentially.</p>
+
+                <h4>1. Core Pillars (CIA Triad):</h4>
                 <ul class="llista-riscos">
-                    <li><strong>Análisis de Riesgos:</strong> Identificación de vulnerabilidades.</li>
-                    <li><strong>Monitoreo de Amenazas:</strong> Análisis de tráfico en tiempo real.</li>
-                    <li><strong>Implementación de Defensas:</strong> Firewalls y cifrado.</li>
+                    <li><strong>Confidentiality:</strong> Ensuring that data is accessible only to those authorized to have access.</li>
+                    <li><strong>Integrity:</strong> Safeguarding the accuracy and completeness of information and processing methods.</li>
+                    <li><strong>Availability:</strong> Ensuring that authorized users have access to information and associated assets when required.</li>
                 </ul>
+
+                <h4>2. Key Defense Areas:</h4>
+                <p>To build a resilient system, we must cover multiple layers of security:</p>
+                <ul class="llista-riscos">
+                    <li><strong>Network Security:</strong> Securing a computer network from intruders, whether targeted attackers or opportunistic malware.</li>
+                    <li><strong>Application Security:</strong> Keeping software and devices free of threats by implementing secure coding practices.</li>
+                    <li><strong>Information Security:</strong> Protecting the integrity and privacy of data, both in storage and in transit.</li>
+                    <li><strong>Operational Security:</strong> Processes for handling and protecting data assets (permissions and workflows).</li>
+                </ul>
+
+                <h4>3. Threat Landscape:</h4>
+                <p>Modern attacks use sophisticated methods to bypass standard firewalls:</p>
+                <ul class="llista-riscos">
+                    <li><strong>Zero-Day Exploits:</strong> Attacks targeting undisclosed vulnerabilities.</li>
+                    <li><strong>Social Engineering:</strong> Manipulating users into divesting confidential info.</li>
+                    <li><strong>Ransomware:</strong> Encrypting files and demanding payment for the key.</li>
+                </ul>
+
+                <div style="border: 1px solid #0f0; padding: 10px; margin-top: 20px; text-align: center; font-family: monospace; background: rgba(0,255,0,0.05);">
+                    [ENCRYPTION_ACTIVE: AES-256]
+                </div>
             </div>
         </aside>
 
@@ -48,10 +72,10 @@
             <article class="projecte">
                 <div class="info-textual">
                     <h2><a href="linux_project.html" class="enllac-principal">Linux Project: System Administration</a></h2>
-                    <p class="descripcio-linies">Exploring core Linux distributions (Ubuntu, CentOS)</p>
-                    <p class="descripcio-linies">Basic command-line interface (CLI) and shell usage</p>
-                    <p class="descripcio-linies">User management and file permissions (chmod/chown)</p>
-                    <p class="descripcio-linies">Introduction to automation with Bash scripting</p>
+                    <p class="descripcio-linies">Exploring core Linux distributions (Ubuntu, CentOS, Debian)</p>
+                    <p class="descripcio-linies">Advanced command-line interface (CLI) and kernel interaction</p>
+                    <p class="descripcio-linies">User privilege management and security hardening (Sudoers/SSH)</p>
+                    <p class="descripcio-linies">Automation of system maintenance using Bash Scripting</p>
                     <hr class="separador">
                 </div>
                 <div class="elements-visuals">
@@ -64,10 +88,10 @@
             <article class="projecte">
                 <div class="info-textual">
                     <h2><a href="css_project.html" class="enllac-principal">CSS Project: Modern Layout & Design</a></h2>
-                    <p class="descripcio-linies">Layout techniques using Flexbox and CSS Grid</p>
-                    <p class="descripcio-linies">Understanding the CSS Box Model and positioning</p>
-                    <p class="descripcio-linies">Responsive design using advanced Media Queries</p>
-                    <p class="descripcio-linies">Transitions, animations, and pseudo-elements</p>
+                    <p class="descripcio-linies">Advanced layout techniques using CSS Flexbox and Grid Systems</p>
+                    <p class="descripcio-linies">Mastering the Box Model, positioning, and Z-index layers</p>
+                    <p class="descripcio-linies">Responsive Web Design (RWD) for mobile-first environments</p>
+                    <p class="descripcio-linies">Creating immersive UI with transitions and custom animations</p>
                     <hr class="separador">
                 </div>
                 <div class="elements-visuals">
@@ -79,11 +103,12 @@
 
             <section class="navegacio-pagines">
                 <div class="menu-navegacio-pagines">
-                    <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Terminal Navigation</h3>
-                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                        <a href="#top" style="color: #0f0; text-decoration: none;">[ ↑ Up ]</a>
-                        <a href="projects_portfolio.html" style="color: #0f0; text-decoration: none;">[ cd /projects ]</a>
-                        <a href="python_project.html" style="color: #0f0; text-decoration: none;">[ ./python ]</a>
+                    <h3 style="color: #0f0; margin-bottom: 15px;">&gt;_ Terminal Navigation</h3>
+                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <a href="#top" class="nav-btn">[ ↑ Up ]</a>
+                        <a href="projects_portfolio.html" class="nav-btn">[ cd /projects ]</a>
+                        <a href="python_project.html" class="nav-btn">[ ./python ]</a>
+                        <a href="sql_project.html" class="nav-btn">[ ./sql ]</a>
                     </div>
                 </div>
             </section>
@@ -91,7 +116,10 @@
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2025 Matrix Terminal System. All Rights Reserved.</p>
+        <div class="xarxes-socials">
+            <a href="#">[LinkedIn]</a> | <a href="#">[GitHub]</a>
+        </div>
     </footer>
 
     <script src="./js/matrix_effect.js?v=3"></script>

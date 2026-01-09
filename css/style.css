@@ -1371,3 +1371,29 @@ h1, h2, .descripcio-linies {
     height: 100%;
     z-index: 100; /* Asegura que el clic esté sobre todo */
 }
+/* --- SEGURIDAD DE NAVEGACIÓN --- */
+
+/* Desactiva el clic y visualmente apaga el cuadro */
+.proyecto-desactivado {
+    opacity: 0.4;
+    filter: grayscale(100%) brightness(0.7);
+    pointer-events: none; /* ESTO BLOQUEA EL CLIC TOTALMENTE */
+    cursor: not-allowed !important;
+}
+
+.proyecto-desactivado .enllac-principal::after {
+    display: none; /* Elimina la capa de clic */
+}
+
+/* Evita que el título brille o cambie al pasar el ratón */
+.proyecto-desactivado:hover {
+    transform: none !important;
+    border-color: #333 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.proyecto-desactivado h3, 
+.proyecto-desactivado p {
+    color: #444 !important;
+}

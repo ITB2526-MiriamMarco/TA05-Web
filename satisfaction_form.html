@@ -3,127 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Satisfaction form to gather feedback on the technical portfolio.">
-    <title>Satisfaction Form</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Satisfaction Form - Terminal Access</title>
+    <link rel="stylesheet" href="./css/style.css?v=3">
+    <style>
+        /* Estilos rápidos para el formulario tipo terminal */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 20, 0, 0.8);
+            padding: 30px;
+            border: 1px solid #0f0;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+        input, textarea, select {
+            width: 100%;
+            background: #000;
+            border: 1px solid #0f0;
+            color: #0f0;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .boton-matrix {
+            background: #0f0;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .boton-matrix:hover {
+            background: #000;
+            color: #0f0;
+            outline: 1px solid #0f0;
+        }
+    </style>
 </head>
-<body>
-<div id="boot-screen">
-    <div id="boot-text"></div>
-    <span class="cursor">_</span>
-</div>
+<body id="top">
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+        <span class="cursor">_</span>
+    </div>
     <canvas id="matrixCanvas"></canvas>
+
     <header class="capcalera-principal">
-        <div class="logo-container">
-            <div class="code-image-simulation">
-                &lt;div class="code"&gt;
-            </div>
-        </div>
         <nav class="menu-navegacio-principal">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects_portfolio.html">Projects</a></li>
                 <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Other Links</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contingut-principal-detall">
+        <div class="form-container">
+            <h1 class="descripcio-linies">&gt; SYSTEM_FEEDBACK_PROTOCOLS</h1>
+            <p style="color: #0f0;">Please enter your data to improve our neural network.</p>
+            <hr class="separador">
+            
+            <form id="survey-form" onsubmit="handleFormSubmit(event)">
+                <label>User ID / Name:</label>
+                <input type="text" required placeholder="Anonymous Agent">
+                
+                <label>Experience Level:</label>
+                <select>
+                    <option>Beginner (Lvl 1)</option>
+                    <option>Intermediate (Lvl 5)</option>
+                    <option>Expert (Lvl 99)</option>
+                </select>
 
-        <section class="projecte-detall">
-
-            <div class="titol-detall">
-                <h1>Customer Satisfaction Survey</h1>
-            </div>
-
-            <p class="project-summary">
-                Your opinion is important! Please rate your satisfaction with the different sections of the portfolio on a scale from 1 (Very Dissatisfied) to 4 (Very Satisfied).
-            </p>
-
-            <hr>
-
-            <form action="#" method="POST" class="satisfaction-form">
-
-                <div class="questions-grid">
-
-                    <div class="question-group">
-                        <h3>Pregunta 1: Design</h3>
-                        <label><input type="radio" name="p1" value="1" required> 1</label>
-                        <label><input type="radio" name="p1" value="2"> 2</label>
-                        <label><input type="radio" name="p1" value="3"> 3</label>
-                        <label><input type="radio" name="p1" value="4"> 4</label>
-                    </div>
-
-                    <div class="question-group">
-                        <h3>Pregunta 2: Navigation</h3>
-                        <label><input type="radio" name="p2" value="1" required> 1</label>
-                        <label><input type="radio" name="p2" value="2"> 2</label>
-                        <label><input type="radio" name="p2" value="3"> 3</label>
-                        <label><input type="radio" name="p2" value="4"> 4</label>
-                    </div>
-
-                    <div class="question-group">
-                        <h3>Pregunta 3: Content Quality</h3>
-                        <label><input type="radio" name="p3" value="1" required> 1</label>
-                        <label><input type="radio" name="p3" value="2"> 2</label>
-                        <label><input type="radio" name="p3" value="3"> 3</label>
-                        <label><input type="radio" name="p3" value="4"> 4</label>
-                    </div>
-
-                    <div class="question-group">
-                        <h3>Pregunta 4: Relevance of Projects</h3>
-                        <label><input type="radio" name="p4" value="1" required> 1</label>
-                        <label><input type="radio" name="p4" value="2"> 2</label>
-                        <label><input type="radio" name="p4" value="3"> 3</label>
-                        <label><input type="radio" name="p4" value="4"> 4</label>
-                    </div>
-
-                    <div class="question-group">
-                        <h3>Pregunta 5: Detail of Explanations</h3>
-                        <label><input type="radio" name="p5" value="1" required> 1</label>
-                        <label><input type="radio" name="p5" value="2"> 2</label>
-                        <label><input type="radio" name="p5" value="3"> 3</label>
-                        <label><input type="radio" name="p5" value="4"> 4</label>
-                    </div>
-
-                    <div class="question-group">
-                        <h3>Pregunta 6: Overall Experience</h3>
-                        <label><input type="radio" name="p6" value="1" required> 1</label>
-                        <label><input type="radio" name="p6" value="2"> 2</label>
-                        <label><input type="radio" name="p6" value="3"> 3</label>
-                        <label><input type="radio" name="p6" value="4"> 4</label>
-                    </div>
-
-                </div>
-
-                <div class="final-comments">
-                    <h3>Additional Comments (Optional)</h3>
-                    <textarea name="comments" rows="5" placeholder="Any suggestions or additional comments?"></textarea>
-                </div>
-
-                <div class="submit-button-container">
-                    <button type="submit">Submit Feedback</button>
-                </div>
-
+                <label>Observations:</label>
+                <textarea rows="4" placeholder="Type your logs here..."></textarea>
+                
+                <button type="submit" class="boton-matrix">SUBMIT TO KERNEL</button>
             </form>
-
-            <div class="menu-navegacio-pagines-detall">
-                <a href="index.html">← Return to Home</a>
-            </div>
-
-        </section>
+        </div>
     </main>
 
-    <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
-        <div class="xarxes-socials">
-            <a href="#">[Social 1]</a> |
-            <a href="#">[Social 2]</a> |
-            <a href="#">[Social 3]</a>
-        </div>
-    </footer>
-    <script src="./js/matrix_effect.js"></script>
+    <script src="./js/matrix_effect.js?v=3"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            // Simulación de envío
+            const btn = event.target.querySelector('button');
+            btn.innerText = "ENCRYPTING...";
+            
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1200);
+        }
+    </script>
 </body>
 </html>
