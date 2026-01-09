@@ -1173,3 +1173,8 @@ body {
     transition: opacity 1s ease;
     pointer-events: none;
 }
+h1, h2, .descripcio-linies {
+    display: inline-block;
+    min-height: 1.2em; /* Mantiene el espacio aunque el texto desaparezca un instante */
+    transition: none;  /* Evita conflictos con animaciones de CSS */
+}

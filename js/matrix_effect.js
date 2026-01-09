@@ -1,6 +1,5 @@
 /**
- * MATRIX TERMINAL ENGINE - FULL INTEGRATED VERSION
- * Includes: Boot Sequence, Matrix Rain, Text Decrypt, and Glitch Effects.
+ * MATRIX TERMINAL ENGINE - FULL INTEGRATED & BUG-FREE VERSION
  */
 
 const canvas = document.getElementById('matrixCanvas');
@@ -26,10 +25,10 @@ function setupCanvas() {
 
 // --- 2. NÚCLEO DE LA LLUVIA MATRIX ---
 function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Crea el rastro
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#0f0";
+    ctx.fillStyle = "#0f0"; // Verde Neón
     ctx.font = fontSize + "px monospace";
     ctx.shadowBlur = 4;
     ctx.shadowColor = "#0f0";
@@ -43,39 +42,52 @@ function drawMatrix() {
         }
         drops[i]++;
     }
-    requestAnimationFrame(drawMatrix);
+    requestAnimationFrame(drawMatrix); // Animación fluida
 }
 
-// --- 3. EFECTOS INTERACTIVOS (HOVER Y GLITCH) ---
+// --- 3. EFECTOS INTERACTIVOS (SOLUCIÓN AL TEXTO ROTO) ---
 function initTextEffects() {
     document.querySelectorAll("h1, h2, .descripcio-linies").forEach(element => {
         let interval = null;
+
+        // Guardamos el valor real en un atributo personalizado (dataset)
+        // Esto evita que el texto se "ensucie" con símbolos permanentes
+        if (!element.dataset.value) {
+            element.dataset.value = element.innerText;
+        }
+
         element.onmouseover = event => {
             let iteration = 0;
-            const originalValue = event.target.innerText;
-            clearInterval(interval);
+            const originalValue = event.target.dataset.value;
+
+            clearInterval(interval); // Limpia animaciones previas
+
             interval = setInterval(() => {
-                event.target.innerText = originalValue.split("")
+                event.target.innerText = originalValue
+                    .split("")
                     .map((letter, index) => {
-                        if(index < iteration) return originalValue[index];
-                        return letters[Math.floor(Math.random() * letters.length)];
-                    }).join("");
-                if(iteration >= originalValue.length) clearInterval(interval);
+                        if(index < iteration) {
+                            return originalValue[index]; // Letra correcta
+                        }
+                        return letters[Math.floor(Math.random() * letters.length)]; // Símbolo
+                    })
+                    .join("");
+
+                if(iteration >= originalValue.length) {
+                    clearInterval(interval);
+                    event.target.innerText = originalValue; // Asegura el final limpio
+                }
+
                 iteration += 1 / 3;
             }, 30);
         };
-    });
-}
 
-function glitchText(elemento) {
-    if (!elemento) return;
-    const textoOriginal = elemento.innerText;
-    let interval = setInterval(() => {
-        elemento.innerText = textoOriginal.split("")
-            .map(() => "ｦｱｳｴｵ012345".charAt(Math.floor(Math.random() * 11)))
-            .join("");
-    }, 50);
-    setTimeout(() => { clearInterval(interval); elemento.innerText = textoOriginal; }, 400);
+        // Si el ratón sale rápido, restauramos el texto original inmediatamente
+        element.onmouseleave = event => {
+            clearInterval(interval);
+            event.target.innerText = event.target.dataset.value;
+        };
+    });
 }
 
 // --- 4. SECUENCIA DE ARRANQUE (BOOT SEQUENCE) ---
@@ -93,35 +105,41 @@ async function runBootSequence() {
     const bootScreen = document.getElementById('boot-screen');
     if (!bootText || !bootScreen) return;
 
+    bootText.innerText = ""; // Limpiar antes de empezar
     for (let line of bootLines) {
         bootText.innerText += line + "\n";
-        // Espera aleatoria para realismo
-        await new Promise(res => setTimeout(res, Math.random() * 300 + 150));
+        await new Promise(res => setTimeout(res, Math.random() * 200 + 100));
     }
 
     setTimeout(() => {
-        bootScreen.classList.add('fade-out');
-        setTimeout(() => bootScreen.style.display = 'none', 1000);
-    }, 800);
+        bootScreen.style.transition = "opacity 0.8s ease";
+        bootScreen.style.opacity = "0";
+        setTimeout(() => {
+            bootScreen.style.display = 'none';
+        }, 800);
+    }, 1000);
 }
 
-// --- 5. INICIALIZACIÓN Y EVENTOS ---
+// --- 5. INICIALIZACIÓN ---
 setupCanvas();
 drawMatrix();
 initTextEffects();
 
 window.addEventListener('resize', setupCanvas);
-window.addEventListener('load', runBootSequence); // Inicia el boot al cargar
+window.addEventListener('load', runBootSequence);
 
+// Efecto glitch automático ocasional en el H1
 setInterval(() => {
     const titulo = document.querySelector('h1');
-    glitchText(titulo);
-}, 8000);
-
-// Alerta Roja con tecla 'X'
-window.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'x') {
-        ctx.fillStyle = "rgba(255, 0, 0, 0.6)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    if (titulo) {
+        const original = titulo.dataset.value || titulo.innerText;
+        let count = 0;
+        const glitchInterval = setInterval(() => {
+            titulo.innerText = original.split("").map(() => letters[Math.floor(Math.random() * 10)]).join("");
+            if (count++ > 5) {
+                clearInterval(glitchInterval);
+                titulo.innerText = original;
+            }
+        }, 60);
     }
-});
+}, 10000);
