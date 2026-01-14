@@ -1,11 +1,11 @@
 /**
- * MATRIX TERMINAL ENGINE - HIGH-PERFORMANCE VERSION
+ * MATRIX TERMINAL ENGINE - FULL OPTIMIZED & FAIL-SAFE VERSION
  */
 
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 
-// --- 1. CONFIGURACIÓN Y RESPONSIVIDAD ---
+// --- 1. CONFIGURATION ---
 const fontSize = 16;
 const characters = "ｦｱｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEF$+-*/=%<>#!";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ｦｱｳｴｵｶｷｸｹｺ";
@@ -15,8 +15,7 @@ function setupCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const columns = Math.floor(canvas.width / fontSize);
-
-    // Optimizamos la regeneración de gotas al redimensionar
+    
     if (drops.length !== columns) {
         drops = [];
         for (let x = 0; x < columns; x++) {
@@ -25,12 +24,12 @@ function setupCanvas() {
     }
 }
 
-// --- 2. NÚCLEO DE LA LLUVIA MATRIX ---
+// --- 2. MATRIX RAIN CORE ---
 function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#0f0";
+    ctx.fillStyle = "#0f0"; 
     ctx.font = fontSize + "px monospace";
 
     for (let i = 0; i < drops.length; i++) {
@@ -45,7 +44,7 @@ function drawMatrix() {
     requestAnimationFrame(drawMatrix);
 }
 
-// --- 3. EFECTOS INTERACTIVOS (TEXTO HACKER) ---
+// --- 3. HACKER TEXT EFFECTS (DECRYPTING ANIMATION) ---
 function initTextEffects() {
     document.querySelectorAll("h1, h2, .descripcio-linies").forEach(element => {
         let interval = null;
@@ -72,7 +71,7 @@ function initTextEffects() {
                     clearInterval(interval);
                     event.target.innerText = originalValue;
                 }
-                iteration += 1 / 2; // Velocidad de revelado aumentada
+                iteration += 1 / 2; 
             }, 20);
         };
 
@@ -83,13 +82,13 @@ function initTextEffects() {
     });
 }
 
-// --- 4. SECUENCIA DE ARRANQUE ACELERADA (BOOT SEQUENCE) ---
+// --- 4. ACCELERATED BOOT SEQUENCE ---
 const bootLines = [
     "> INITIALIZING KERNEL 6.2.0...",
-    "> LOADING MODULES............... [OK]",
-    "> SECURE PROTOCOLS.............. [OK]",
-    "> ACCESSING REPOSITORY.......... [DONE]",
-    "> WELCOME, AGENT."
+    "> LOADING SYSTEM MODULES........ [OK]",
+    "> SECURE PROTOCOLS............. [OK]",
+    "> ACCESSING REPOSITORY......... [DONE]",
+    "> WELCOME, AGENT. ACCESS GRANTED."
 ];
 
 async function runBootSequence() {
@@ -97,24 +96,25 @@ async function runBootSequence() {
     const bootScreen = document.getElementById('boot-screen');
     if (!bootText || !bootScreen) return;
 
-    bootText.innerText = "";
+    bootText.innerText = ""; 
     for (let line of bootLines) {
         bootText.innerText += line + "\n";
-        // Tiempo de escritura mucho más rápido
         await new Promise(res => setTimeout(res, Math.random() * 40 + 10));
     }
 
-    // Desvanecimiento rápido
-    setTimeout(() => {
-        bootScreen.style.transition = "opacity 0.4s ease";
-        bootScreen.style.opacity = "0";
+    return new Promise(resolve => {
         setTimeout(() => {
-            bootScreen.style.display = 'none';
+            bootScreen.style.transition = "opacity 0.4s ease";
+            bootScreen.style.opacity = "0";
+            setTimeout(() => {
+                bootScreen.style.display = 'none';
+                resolve();
+            }, 400);
         }, 400);
-    }, 400);
+    });
 }
 
-// --- 5. PRECARGA DE ENLACES (NAVEGACIÓN INSTANTÁNEA) ---
+// --- 5. LINK PREFETCHING (INSTANT NAV) ---
 function initPrefetching() {
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('mouseenter', () => {
@@ -129,7 +129,7 @@ function initPrefetching() {
     });
 }
 
-// --- 6. INICIALIZACIÓN Y CONTROL DE SESIÓN ---
+// --- 6. INITIALIZATION & FAIL-SAFE LOAD ---
 setupCanvas();
 drawMatrix();
 initTextEffects();
@@ -137,21 +137,35 @@ initPrefetching();
 
 window.addEventListener('resize', setupCanvas);
 
-// Solo ejecuta el boot la primera vez que se abre la pestaña
 window.addEventListener('load', () => {
     const hasBooted = sessionStorage.getItem('system_booted');
     const bootScreen = document.getElementById('boot-screen');
 
+    // Función de emergencia para quitar la pantalla negra si algo falla
+    const forceExitBoot = () => {
+        if (bootScreen) {
+            bootScreen.style.opacity = "0";
+            setTimeout(() => bootScreen.style.display = 'none', 500);
+        }
+    };
+
     if (!hasBooted && bootScreen) {
+        // Si el boot tarda más de 6 segundos, lo quitamos a la fuerza
+        const emergencyTimeout = setTimeout(forceExitBoot, 6000);
+
         runBootSequence().then(() => {
+            clearTimeout(emergencyTimeout);
             sessionStorage.setItem('system_booted', 'true');
+        }).catch(err => {
+            console.error("Boot error:", err);
+            forceExitBoot();
         });
     } else if (bootScreen) {
         bootScreen.style.display = 'none';
     }
 });
 
-// Glitch ocasional en el título principal
+// Periodic Glitch Effect
 setInterval(() => {
     const titulo = document.querySelector('h1');
     if (titulo && titulo.innerText === titulo.dataset.value) {
