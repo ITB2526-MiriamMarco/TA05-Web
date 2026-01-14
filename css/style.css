@@ -1,4 +1,4 @@
-/* General Styles */
+ee/* General Styles */
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -1443,4 +1443,37 @@ h1, h2, .descripcio-linies {
         flex-direction: column;
         text-align: center;
     }
+}
+/* 1. Reset de las tarjetas de proyecto (Eliminamos la elevación) */
+.projecte, .project-part, .project-list ul li {
+    /* Mantenemos el diseño pero quitamos la transición de movimiento */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0, 255, 0, 0.2); 
+    background: rgba(0, 0, 0, 0.7);
+    transform: none !important; /* Forzamos a que no haya movimiento */
+}
+
+/* 2. Nuevo efecto Hover: Solo luz y color, sin movimiento */
+.projecte:hover, .project-part:hover, .project-list ul li:hover {
+    /* En lugar de moverse, el fondo se ilumina un poco más */
+    background: rgba(0, 40, 0, 0.8);
+    
+    /* El borde brilla con fuerza */
+    border-color: #0f0;
+    
+    /* El resplandor (glow) se mantiene porque da estética sin mover nada */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    
+    /* Aseguramos que no haya escala */
+    transform: none !important;
+}
+
+/* 3. Ajuste para los círculos técnicos */
+.project-part:hover .cercle, .project-list ul li:hover .cercle {
+    /* Quitamos el scale(1.1) y el rotate */
+    transform: none !important; 
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 10px #0f0;
 }
