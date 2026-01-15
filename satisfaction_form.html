@@ -3,51 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Satisfacción</title>
+    <title>Satisfacción - Mi Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body id="top">
     <canvas id="matrixCanvas"></canvas>
 
-    <header>
+    <header class="capcalera-principal">
         <nav>
-            <a href="index.html">Volver al Inicio</a>
+            <a href="index.html" class="nav-link" data-value="VOLVER">VOLVER</a>
         </nav>
     </header>
 
-    <main class="form-container">
-        <h1>Formulario de Satisfacción</h1>
-        <p>Tu opinión es importante para nosotros.</p>
-        
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+    <section class="formulario-satisfaccion">
+        <div class="contenedor-form">
+            <h1 class="titulo-form" data-value="SATISFACCIÓN">SATISFACCIÓN</h1>
+            <p class="subtitulo-form">Déjanos tu opinión sobre el proyecto</p>
 
-            <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+            <form action="https://formspree.io/f/tu_id" method="POST" id="survey-form">
+                <div class="campo">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre..." required>
+                </div>
 
-            <div class="form-group">
-                <label>¿Cómo calificarías el servicio?</label>
-                <select name="rating" id="rating">
-                    <option value="excelente">Excelente</option>
-                    <option value="bueno">Bueno</option>
-                    <option value="regular">Regular</option>
-                    <option value="malo">Malo</option>
-                </select>
-            </div>
+                <div class="campo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Tu correo..." required>
+                </div>
 
-            <div class="form-group">
-                <label for="comments">Comentarios:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
-            </div>
+                <div class="campo">
+                    <label for="rating">Valoración:</label>
+                    <select id="rating" name="rating">
+                        <option value="5">Excelente</option>
+                        <option value="4">Muy Bueno</option>
+                        <option value="3">Bueno</option>
+                        <option value="2">Regular</option>
+                        <option value="1">Malo</option>
+                    </select>
+                </div>
 
-            <button type="submit" class="btn-submit">Enviar Feedback</button>
-        </form>
-    </main>
+                <div class="campo">
+                    <label for="comments">Comentarios:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Escribe aquí..."></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">ENVIAR FEEDBACK</button>
+            </form>
+        </div>
+    </section>
 
     <script src="./js/matrix_effect.js"></script>
 </body>
