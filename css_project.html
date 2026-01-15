@@ -6,12 +6,34 @@
     <meta name="description" content="Dedicated page for the CSS Project.">
     <title>CSS Project Details - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+    
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+    </style>
 </head>
 <body id="top">
-<div id="boot-screen">
-    <div id="boot-text"></div>
-    <span class="cursor">_</span>
-</div>
+
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+        <span class="cursor">_</span>
+    </div>
+
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
@@ -34,7 +56,7 @@
         <section class="projecte-detall">
 
             <div class="titol-detall">
-                <h1>CSS Project: In-depth Layout and Styling</h1>
+                <h1 data-value="CSS Project: In-depth Layout and Styling">CSS Project: In-depth Layout and Styling</h1>
                 <p style="text-align: center; margin-top: -15px;">
                     <a href="http://externa.com/css-guide" target="_blank" style="color: #0f0; font-size: 0.8em;">[ External Resource Access ]</a>
                 </p>
@@ -42,7 +64,7 @@
 
             <div class="project-part part-1">
                 <div class="content-lines">
-                    <h2>Part 1: Core Selectors and Properties</h2>
+                    <h2 data-value="Part 1: Core Selectors and Properties">Part 1: Core Selectors and Properties</h2>
                     <p class="descripcio-linies">Understanding Type, Class, ID, and Attribute selectors.</p>
                     <p class="descripcio-linies">Specificity and the Cascade order in styling.</p>
                     <p class="descripcio-linies">Managing Box Model: margin, border, padding, and content.</p>
@@ -53,7 +75,7 @@
 
             <div class="project-part part-2">
                 <div class="content-lines">
-                    <h2>Part 2: Flexbox and Grid</h2>
+                    <h2 data-value="Part 2: Flexbox and Grid">Part 2: Flexbox and Grid</h2>
                     <p class="descripcio-linies">Implementing one-dimensional layouts with Flexbox ('justify-content', 'align-items').</p>
                     <p class="descripcio-linies">Creating complex structures with CSS Grid ('grid-template-columns').</p>
                     <p class="descripcio-linies">Differences between inline-block and block elements.</p>
@@ -64,7 +86,7 @@
 
             <div class="project-part part-3">
                 <div class="content-lines">
-                    <h2>Part 3: Responsive Design and Animations</h2>
+                    <h2 data-value="Part 3: Responsive Design and Animations">Part 3: Responsive Design and Animations</h2>
                     <p class="descripcio-linies">Using Media Queries to adapt layouts for different screens.</p>
                     <p class="descripcio-linies">Introduction to Transitions and basic Keyframe animations.</p>
                     <p class="descripcio-linies">Use of pseudo-classes (:hover, :focus) and pseudo-elements.</p>
@@ -73,7 +95,7 @@
                 <div class="cercle css-image">@keyframes</div>
             </div>
 
-            <div class="menu-navegacio-pagines-detall">
+            <nav class="menu-navegacio-pagines-detall">
                 <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Execute Navigation</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
@@ -81,15 +103,15 @@
                     <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux ]</a>
                     <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
                 </div>
-            </div>
+            </nav>
 
         </section>
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Matrix Terminal System. All protocols active.</p>
     </footer>
 
-    <script src="./js/matrix_effect.js"></script>
+    <script src="./js/matrix_effects.js"></script>
 </body>
 </html>

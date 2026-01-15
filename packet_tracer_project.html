@@ -6,12 +6,35 @@
     <meta name="description" content="Detailed information on the Packet Tracer network simulation project, covering subnetting, routing, and VLAN configuration.">
     <title>Packet Tracer Project - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; text-align: left; width: fit-content; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+        pre { background: rgba(0, 50, 0, 0.3); padding: 10px; border-left: 3px solid #0f0; overflow-x: auto; }
+    </style>
 </head>
 <body id="top">
-<div id="boot-screen">
-    <div id="boot-text"></div>
-    <span class="cursor">_</span>
-</div>
+
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+        <span class="cursor">_</span>
+    </div>
+
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
@@ -33,7 +56,7 @@
     <main class="contingut-principal-detall">
         <section class="projecte-detall">
             <div class="titol-detall">
-                <h1>Packet Tracer: Network Simulation & Configuration</h1>
+                <h1 data-value="Packet Tracer: Network Simulation & Configuration">Packet Tracer: Network Simulation & Configuration</h1>
             </div>
 
             <p class="project-summary" style="font-family: monospace; color: #0f0;">
@@ -42,7 +65,7 @@
 
             <div class="project-part part-1">
                 <div class="content-lines">
-                    <h2>Part 1: Subnetting and IP Addressing</h2>
+                    <h2 data-value="Part 1: Subnetting and IP Addressing">Part 1: Subnetting and IP Addressing</h2>
                     <p class="descripcio-linies">Mastering Classless Inter-Domain Routing (CIDR) and VLSM.</p>
                     <p class="descripcio-linies">Efficiently dividing large network blocks into functional subnets.</p>
                     <p class="descripcio-linies">Assigning static IP addresses to end devices and gateway interfaces.</p>
@@ -50,11 +73,9 @@
                 <div class="cercle" style="border-color: #0f0; color: #0f0;">/24</div>
             </div>
 
-
-
             <div class="project-part part-2">
                 <div class="content-lines">
-                    <h2>Part 2: Router Configuration (Static & Dynamic)</h2>
+                    <h2 data-value="Part 2: Router Configuration (Static & Dynamic)">Part 2: Router Configuration (Static & Dynamic)</h2>
                     <p class="descripcio-linies">Configuring interfaces and default gateways on Cisco routers.</p>
                     <p class="descripcio-linies">Implementing static routes for inter-subnet communication.</p>
                     <p class="descripcio-linies">Introduction to dynamic protocols like RIP and OSPF.</p>
@@ -65,7 +86,7 @@
 
             <div class="project-part part-3">
                 <div class="content-lines">
-                    <h2>Part 3: Switch Configuration (VLANs & Trunking)</h2>
+                    <h2 data-value="Part 3: Switch Configuration (VLANs & Trunking)">Part 3: Switch Configuration (VLANs & Trunking)</h2>
                     <p class="descripcio-linies">Segmenting the network using Virtual Local Area Networks (VLANs).</p>
                     <p class="descripcio-linies">Setting up access ports and trunking between devices.</p>
                     <p class="descripcio-linies">Configuring 'Router-on-a-Stick' for inter-VLAN routing.</p>
@@ -73,24 +94,22 @@
                 <div class="cercle" style="border-color: #0f0; color: #0f0;">VLAN</div>
             </div>
 
-
-
-            <div class="menu-navegacio-pagines-detall">
+            <nav class="menu-navegacio-pagines-detall">
                 <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Network Navigation</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
                     <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux_security ]</a>
                     <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
                 </div>
-            </div>
+            </nav>
 
         </section>
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Matrix Terminal System. All security protocols active.</p>
     </footer>
 
-    <script src="./js/matrix_effect.js"></script>
+    <script src="./js/matrix_effects.js"></script>
 </body>
 </html>

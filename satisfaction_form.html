@@ -4,26 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satisfaction Form - Terminal Access</title>
-    <link rel="stylesheet" href="./css/style.css?v=3">
+    <link rel="stylesheet" href="./css/style.css">
+    
     <style>
-        /* Estilos rápidos para el formulario tipo terminal */
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; text-align: left; width: fit-content; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+
         .form-container {
             max-width: 600px;
-            margin: 0 auto;
-            background: rgba(0, 20, 0, 0.8);
+            margin: 50px auto;
+            background: rgba(0, 20, 0, 0.85);
             padding: 30px;
             border: 1px solid #0f0;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            font-family: 'Courier New', monospace;
         }
+        
+        label { display: block; color: #0f0; margin-top: 15px; font-weight: bold; }
+        
         input, textarea, select {
             width: 100%;
             background: #000;
             border: 1px solid #0f0;
             color: #0f0;
             padding: 10px;
-            margin: 10px 0;
+            margin: 8px 0;
             font-family: monospace;
+            outline: none;
         }
+
+        input:focus, textarea:focus {
+            box-shadow: 0 0 10px #0f0;
+            background: rgba(0, 50, 0, 0.3);
+        }
+
         .boton-matrix {
             background: #0f0;
             color: #000;
@@ -32,12 +61,16 @@
             cursor: pointer;
             font-weight: bold;
             width: 100%;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             transition: 0.3s;
         }
+
         .boton-matrix:hover {
-            background: #000;
-            color: #0f0;
-            outline: 1px solid #0f0;
+            background: #fff;
+            box-shadow: 0 0 25px #0f0;
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -46,6 +79,7 @@
         <div id="boot-text"></div>
         <span class="cursor">_</span>
     </div>
+
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
@@ -53,47 +87,64 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects_portfolio.html">Projects</a></li>
-                <li><a href="satisfaction_form.html">Satisfaction Form</a></li>
+                <li><a href="satisfaction_form.html">Form</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contingut-principal-detall">
         <div class="form-container">
-            <h1 class="descripcio-linies">&gt; SYSTEM_FEEDBACK_PROTOCOLS</h1>
-            <p style="color: #0f0;">Please enter your data to improve our neural network.</p>
-            <hr class="separador">
+            <h1 data-value="SYSTEM_FEEDBACK_PROTOCOLS">&gt; SYSTEM_FEEDBACK_PROTOCOLS</h1>
+            <p style="color: #0f0; font-size: 0.9em;">[ STATUS: Awaiting User Input... ]</p>
+            <hr class="separador" style="border: 0.5px solid #0f0; margin: 20px 0;">
             
             <form id="survey-form" onsubmit="handleFormSubmit(event)">
-                <label>User ID / Name:</label>
-                <input type="text" required placeholder="Anonymous Agent">
+                <label>&gt; User_ID_Token:</label>
+                <input type="text" required placeholder="e.g. Neo_01">
                 
-                <label>Experience Level:</label>
+                <label>&gt; Skill_Level_Selection:</label>
                 <select>
-                    <option>Beginner (Lvl 1)</option>
-                    <option>Intermediate (Lvl 5)</option>
-                    <option>Expert (Lvl 99)</option>
+                    <option value="1">Beginner (Lvl 1)</option>
+                    <option value="5">Intermediate (Lvl 5)</option>
+                    <option value="99">Expert (Lvl 99)</option>
                 </select>
 
-                <label>Observations:</label>
-                <textarea rows="4" placeholder="Type your logs here..."></textarea>
+                <label>&gt; Observation_Logs:</label>
+                <textarea rows="4" placeholder="Enter transmission details..."></textarea>
                 
-                <button type="submit" class="boton-matrix">SUBMIT TO KERNEL</button>
+                <button type="submit" class="boton-matrix">EXECUTE_SUBMISSION</button>
             </form>
         </div>
     </main>
 
-    <script src="./js/matrix_effect.js?v=3"></script>
+    <footer class="peu-pagina">
+        <p>&copy; 2026 Matrix Terminal System. Secure connection established.</p>
+    </footer>
+
+    <script src="./js/matrix_effects.js"></script>
+
     <script>
+        // Función para simular procesamiento de datos estilo terminal
         function handleFormSubmit(event) {
             event.preventDefault();
-            // Simulación de envío
             const btn = event.target.querySelector('button');
-            btn.innerText = "ENCRYPTING...";
+            btn.disabled = true;
+            btn.style.background = "#333";
+            btn.style.color = "#0f0";
+            
+            let dots = 0;
+            const interval = setInterval(() => {
+                btn.innerText = "ENCRYPTING DATA" + ".".repeat(dots % 4);
+                dots++;
+            }, 300);
             
             setTimeout(() => {
-                window.location.href = "index.html";
-            }, 1200);
+                clearInterval(interval);
+                btn.innerText = "TRANSFER_COMPLETE";
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 800);
+            }, 2500);
         }
     </script>
 </body>

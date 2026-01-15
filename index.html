@@ -6,6 +6,27 @@
     <meta name="description" content="Cybersecurity Specialist & Full-Stack Developer Portfolio - Terminal Interface">
     <title>Terminal Portfolio | Main Access</title>
     <link rel="stylesheet" href="./css/style.css">
+    
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            pointer-events: all;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+    </style>
 </head>
 <body id="top">
 
@@ -49,23 +70,20 @@
         </aside>
 
         <section class="seccio-projectes">
-            
             <article class="projecte ciberseguretat-full">
                 <div class="info-textual">
-                    <h2 data-value="SECURITY OPERATIONS & ARCHITECTURE">
-                        <a href="#">Security Operations & Architecture</a>
-                    </h2>
+                    <h2 data-value="SECURITY OPERATIONS & ARCHITECTURE">Security Operations & Architecture</h2>
                     
                     <div class="cyber-terminal-box">
                         <div class="cyber-column">
-                            <p class="descripcio-linies">> [THREAT_HUNTING]: Active monitoring for advanced persistent threats (APTs).</p>
-                            <p class="descripcio-linies">> [NETWORK_HARDENING]: Securing infrastructure via firewall & ACL optimization.</p>
-                            <p class="descripcio-linies">> [VULNERABILITY_SCAN]: Automated auditing of system weaknesses and exploits.</p>
+                            <p class="descripcio-linies">> [THREAT_HUNTING]: Active monitoring for APTs.</p>
+                            <p class="descripcio-linies">> [NETWORK_HARDENING]: Firewall optimization.</p>
+                            <p class="descripcio-linies">> [VULNERABILITY_SCAN]: Automated auditing.</p>
                         </div>
                         <div class="cyber-column">
-                            <p class="descripcio-linies">> [PENTESTING]: Simulated cyber-attacks to evaluate security posture.</p>
-                            <p class="descripcio-linies">> [ENCRYPTION_LAYER]: Implementing AES-256 and SSL/TLS secure protocols.</p>
-                            <p class="descripcio-linies">> [SOC_OPERATIONS]: Real-time incident response and forensic analysis.</p>
+                            <p class="descripcio-linies">> [PENTESTING]: Simulated cyber-attacks.</p>
+                            <p class="descripcio-linies">> [ENCRYPTION_LAYER]: AES-256 protocols.</p>
+                            <p class="descripcio-linies">> [SOC_OPERATIONS]: Forensic analysis.</p>
                         </div>
                     </div>
                 </div>
@@ -77,21 +95,11 @@
 
             <article class="projecte">
                 <div class="info-textual">
-                    <h2 data-value="LINUX SYSTEM ADMINISTRATION"><a href="linux_project.html">Linux System Administration</a></h2>
-                    <p class="descripcio-linies">Advanced CLI management, user permissions (755), and kernel optimization.</p>
+                    <h2 data-value="LINUX SYSTEM ADMINISTRATION">Linux System Administration</h2>
+                    <p class="descripcio-linies">Advanced CLI management and kernel optimization.</p>
                 </div>
                 <div class="elements-visuals">
                     <div class="cercle linux-image">BASH</div>
-                </div>
-            </article>
-
-            <article class="projecte">
-                <div class="info-textual">
-                    <h2 data-value="AUTOMATION & SCRIPTING"><a href="python_project.html">Automation & Scripting</a></h2>
-                    <p class="descripcio-linies">Developing custom tools for task automation and data processing using Python.</p>
-                </div>
-                <div class="elements-visuals">
-                    <div class="cercle python-image">def()</div>
                 </div>
             </article>
 
@@ -111,10 +119,6 @@
 
     <footer class="peu-pagina">
         <p>&copy; 2026 Matrix Terminal System. All security protocols active.</p>
-        <div class="xarxes-socials">
-            <a href="#">[ GITHUB ]</a>
-            <a href="#">[ LINKEDIN ]</a>
-        </div>
     </footer>
 
     <script src="./js/matrix_effects.js"></script>

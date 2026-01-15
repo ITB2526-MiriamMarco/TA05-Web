@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of all technical projects, including Linux, CSS, Python, SQL, PowerShell, and Packet Tracer.">
-    <title>Projects Portfolio - Matrix Mode</title>
-    <link rel="stylesheet" href="./css/style.css?v=3">
+    <title>Projects Portfolio | System Repository</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; text-align: left; width: fit-content; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+        
+        /* Ajuste para que los artículos parezcan entradas de terminal */
+        .projecte {
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+            padding: 20px 0;
+            transition: background 0.3s;
+        }
+        .projecte:hover {
+            background: rgba(0, 255, 0, 0.05);
+        }
+        .enllac-principal {
+            text-decoration: none;
+            color: #0f0;
+        }
+    </style>
 </head>
 <body id="top">
 
@@ -36,22 +70,22 @@
         <section class="projecte-detall">
 
             <div class="titol-detall">
-                <h1>Technical Projects Portfolio</h1>
+                <h1 data-value="TECHNICAL PROJECTS PORTFOLIO">Technical Projects Portfolio</h1>
             </div>
 
             <p style="color: #0f0; font-family: monospace;">&gt; Accessing repository... OK</p>
             <p class="project-summary" style="font-family: monospace; color: #0f0; margin-bottom: 20px;">
-                &gt; Welcome to the main projects index. All modules are operational and ready for inspection.
+                &gt; Welcome to the main projects index. All modules are operational.
             </p>
 
             <hr class="separador">
 
             <div class="project-list">
-                <h2>System & Development Projects:</h2>
+                <h2 data-value="SYSTEM & DEVELOPMENT">System & Development Projects:</h2>
                 
                 <article class="projecte">
                     <div class="info-textual">
-                        <h3><a href="linux_project.html" class="enllac-principal">Linux Project: System Administration</a></h3>
+                        <h3><a href="linux_project.html" class="enllac-principal" data-value="LINUX SYSTEM ADMINISTRATION">Linux Project: System Administration</a></h3>
                         <p class="descripcio-linies">Focuses on CLI, permissions, and basic security hardening.</p>
                     </div>
                     <div class="elements-visuals">
@@ -61,7 +95,7 @@
 
                 <article class="projecte">
                     <div class="info-textual">
-                        <h3><a href="css_project.html" class="enllac-principal">CSS Project: Modern Layout & Design</a></h3>
+                        <h3><a href="css_project.html" class="enllac-principal" data-value="MODERN LAYOUT & DESIGN">CSS Project: Modern Layout & Design</a></h3>
                         <p class="descripcio-linies">Deep dive into Flexbox, CSS Grid, and Responsive Web Design.</p>
                     </div>
                     <div class="elements-visuals">
@@ -69,11 +103,11 @@
                     </div>
                 </article>
 
-                <h2>Emerging Technology Projects:</h2>
+                <h2 data-value="EMERGING TECHNOLOGIES">Emerging Technology Projects:</h2>
 
                 <article class="projecte">
                     <div class="info-textual">
-                        <h3><a href="python_project.html" class="enllac-principal">Python Project: Data Automation</a></h3>
+                        <h3><a href="python_project.html" class="enllac-principal" data-value="PYTHON DATA AUTOMATION">Python Project: Data Automation</a></h3>
                         <p class="descripcio-linies">Introduction to scripting, data structures, and task automation.</p>
                     </div>
                     <div class="elements-visuals">
@@ -83,42 +117,42 @@
 
                 <article class="projecte">
                     <div class="info-textual">
-                        <h3><a href="sql_project.html" class="enllac-principal">SQL Project: Database Management</a></h3>
-                        <p class="descripcio-linies">Relational database design and complex query construction.</p>
-                    </div>
-                    <div class="elements-visuals">
-                        <div class="cercle sql-image">SELECT</div>
-                    </div>
-                </article>
-
-                <article class="projecte">
-                    <div class="info-textual">
-                        <h3><a href="powershell_project.html" class="enllac-principal">PowerShell Project: Windows Management</a></h3>
+                        <h3><a href="powershell_project.html" class="enllac-principal" data-value="POWERSHELL WINDOWS MANAGEMENT">PowerShell Project: Windows Management</a></h3>
                         <p class="descripcio-linies">Automation for Windows environments and Active Directory.</p>
                     </div>
                     <div class="elements-visuals">
                         <div class="cercle powershell-image">PS&gt;_</div>
                     </div>
                 </article>
+                
+                <article class="projecte">
+                    <div class="info-textual">
+                        <h3><a href="packet_tracer.html" class="enllac-principal" data-value="CISCO NETWORK SIMULATION">Packet Tracer: Network Simulation</a></h3>
+                        <p class="descripcio-linies">VLANs, OSPF routing, and network infrastructure design.</p>
+                    </div>
+                    <div class="elements-visuals">
+                        <div class="cercle" style="border: 1px solid #0f0; color:#0f0;">IPv4</div>
+                    </div>
+                </article>
             </div>
 
-            <div class="menu-navegacio-pagines-detall">
+            <nav class="menu-navegacio-pagines-detall">
                 <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Terminal Navigation</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
                     <a href="satisfaction_form.html" style="color: #0f0; text-decoration: none;">[ ./run_survey ]</a>
                     <a href="#top" style="color: #0f0; text-decoration: none;">[ ↑ top ]</a>
                 </div>
-            </div>
+            </nav>
 
         </section>
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Matrix Terminal System. All security protocols active.</p>
     </footer>
 
-    <script src="./js/matrix_effect.js?v=3"></script>
+    <script src="./js/matrix_effects.js"></script>
 
 </body>
 </html>

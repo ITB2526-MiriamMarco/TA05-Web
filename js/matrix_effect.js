@@ -1,196 +1,107 @@
 /**
- * MATRIX TERMINAL ENGINE - OPTIMIZED VERSION
- * FAST BOOT & HIGH PERFORMANCE
+ * MATRIX TERMINAL SYSTEM - CORE ENGINE
+ * Includes: Matrix Rain, Hacker Text Effect, and Smart Boot Sequence
  */
 
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. GESTIÓN DE LA PANTALLA DE CARGA (BOOT SEQUENCE)
+    const bootScreen = document.getElementById("boot-screen");
+    const bootText = document.getElementById("boot-text");
+    const isFirstLoad = !sessionStorage.getItem("system_booted");
 
-// --- 1. CONFIGURATION ---
-const fontSize = 16;
-const characters = "ｦｱｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEF$+-*/=%<>#!";
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ｦｱｳｴｵｶｷｸｹｺ";
-let drops = [];
+    const terminalMessages = [
+        "INITIALIZING MATRIX KERNEL 4.0.1...",
+        "LOADING NEURAL NETWORKS...",
+        "ESTABLISHING SECURE PROTOCOLS...",
+        "DECRYPTING DATABASE FILES...",
+        "ACCESS GRANTED. WELCOME, AGENT."
+    ];
 
-// FPS Control para la lluvia
-let lastTime = 0;
-const fps = 30;
-const nextFrame = 1000 / fps;
-
-function setupCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const columns = Math.floor(canvas.width / fontSize);
-    
-    if (drops.length !== columns) {
-        drops = [];
-        for (let x = 0; x < columns; x++) {
-            drops[x] = Math.floor(Math.random() * -20);
-        }
+    if (isFirstLoad) {
+        let currentLine = 0;
+        const typeMessage = () => {
+            if (currentLine < terminalMessages.length) {
+                bootText.innerHTML += `> ${terminalMessages[currentLine]}\n`;
+                currentLine++;
+                setTimeout(typeMessage, 400); // Velocidad de los mensajes
+            } else {
+                setTimeout(() => {
+                    bootScreen.style.opacity = "0";
+                    setTimeout(() => {
+                        bootScreen.style.display = "none";
+                        sessionStorage.setItem("system_booted", "true");
+                    }, 500);
+                }, 800);
+            }
+        };
+        typeMessage();
+    } else {
+        // Si ya cargó antes, eliminamos la pantalla de carga instantáneamente
+        bootScreen.style.display = "none";
     }
-}
 
-// --- 2. MATRIX RAIN CORE ---
-function drawMatrix(timestamp = 0) {
-    if (timestamp - lastTime < nextFrame) {
-        requestAnimationFrame(drawMatrix);
-        return;
-    }
-    lastTime = timestamp;
+    // 2. EFECTO DE TEXTO HACKER (DESCIFRADO)
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+    const hackerElements = document.querySelectorAll("[data-value]");
 
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#0f0"; 
-    ctx.font = fontSize + "px monospace";
-    ctx.shadowBlur = 5; // Ligero resplandor
-    ctx.shadowColor = "#0f0";
-
-    for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
-    }
-    requestAnimationFrame(drawMatrix);
-}
-
-// --- 3. HACKER TEXT EFFECTS ---
-function initTextEffects() {
-    document.querySelectorAll("h1, h2, .descripcio-linies").forEach(element => {
-        let interval = null;
-
-        if (!element.dataset.value) {
-            element.dataset.value = element.innerText;
-        }
-
+    hackerElements.forEach(element => {
         element.onmouseover = event => {
             let iteration = 0;
             const originalValue = event.target.dataset.value;
-            clearInterval(interval);
+            clearInterval(element.interval);
 
-            interval = setInterval(() => {
+            element.interval = setInterval(() => {
                 event.target.innerText = originalValue
                     .split("")
                     .map((letter, index) => {
-                        if(index < iteration) return originalValue[index];
+                        if (index < iteration) return originalValue[index];
                         return letters[Math.floor(Math.random() * letters.length)];
                     })
                     .join("");
 
-                if(iteration >= originalValue.length) {
-                    clearInterval(interval);
-                    event.target.innerText = originalValue;
+                if (iteration >= originalValue.length) {
+                    clearInterval(element.interval);
                 }
-                iteration += 1 / 3; 
+                iteration += 1 / 3;
             }, 30);
         };
+    });
 
-        element.onmouseleave = event => {
-            clearInterval(interval);
-            event.target.innerText = event.target.dataset.value;
+    // 3. LLUVIA DE CÓDIGO MATRIX (CANVAS)
+    const canvas = document.getElementById("matrixCanvas");
+    if (canvas) {
+        const ctx = canvas.getContext("2d");
+
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         };
-    });
-}
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
 
-// --- 4. FAST BOOT SEQUENCE (Aprox 1 second) ---
-const bootLines = [
-    "> INITIALIZING KERNEL 6.2.0...",
-    "> LOADING SYSTEM MODULES........ [OK]",
-    "> SECURE PROTOCOLS............. [OK]",
-    "> WELCOME, AGENT. ACCESS GRANTED."
-];
+        const characters = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
 
-async function runBootSequence() {
-    const bootText = document.getElementById('boot-text');
-    const bootScreen = document.getElementById('boot-screen');
-    if (!bootText || !bootScreen) return;
+        function drawMatrix() {
+            // Fondo semitransparente para el efecto estela
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    bootText.innerText = ""; 
-    for (let line of bootLines) {
-        bootText.innerText += line + "\n";
-        // Velocidad ultra rápida
-        await new Promise(res => setTimeout(res, Math.random() * 20 + 10));
-    }
+            ctx.fillStyle = "#0f0"; // Color verde neón
+            ctx.font = `${fontSize}px monospace`;
 
-    return new Promise(resolve => {
-        setTimeout(() => {
-            bootScreen.style.transition = "opacity 0.3s ease";
-            bootScreen.style.opacity = "0";
-            setTimeout(() => {
-                bootScreen.style.display = 'none';
-                resolve();
-            }, 300);
-        }, 250); // Breve pausa final para lectura
-    });
-}
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-// --- 5. LINK PREFETCHING (FAIL-SAFE) ---
-function initPrefetching() {
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            const href = link.getAttribute('href');
-            if (href && href.endsWith('.html') && !href.startsWith('#')) {
-                if (!document.querySelector(`link[href="${href}"]`)) {
-                    const prefetch = document.createElement('link');
-                    prefetch.rel = 'prefetch';
-                    prefetch.href = href;
-                    document.head.appendChild(prefetch);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
                 }
+                drops[i]++;
             }
-        }, { once: true });
-    });
-}
-
-// --- 6. INITIALIZATION ---
-setupCanvas();
-requestAnimationFrame(drawMatrix);
-initTextEffects();
-initPrefetching();
-
-window.addEventListener('resize', setupCanvas);
-
-window.addEventListener('load', () => {
-    const hasBooted = sessionStorage.getItem('system_booted');
-    const bootScreen = document.getElementById('boot-screen');
-
-    const forceExitBoot = () => {
-        if (bootScreen) {
-            bootScreen.style.display = 'none';
         }
-    };
-
-    if (!hasBooted && bootScreen) {
-        // Reducido a 2.5 segundos de máximo por si algo falla
-        const emergencyTimeout = setTimeout(forceExitBoot, 2500);
-
-        runBootSequence().then(() => {
-            clearTimeout(emergencyTimeout);
-            sessionStorage.setItem('system_booted', 'true');
-        }).catch(err => {
-            console.error("Boot error:", err);
-            forceExitBoot();
-        });
-    } else if (bootScreen) {
-        bootScreen.style.display = 'none';
+        setInterval(drawMatrix, 50);
     }
 });
-
-// Periodic Glitch Effect (Cada 15s)
-setInterval(() => {
-    const titulo = document.querySelector('h1');
-    if (titulo && titulo.innerText === titulo.dataset.value) {
-        const original = titulo.dataset.value;
-        let count = 0;
-        const glitchInterval = setInterval(() => {
-            titulo.innerText = original.split("").map(() => letters[Math.floor(Math.random() * 10)]).join("");
-            if (count++ > 3) {
-                clearInterval(glitchInterval);
-                titulo.innerText = original;
-            }
-        }, 50);
-    }
-}, 15000);

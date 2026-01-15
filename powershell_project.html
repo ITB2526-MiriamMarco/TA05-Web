@@ -3,21 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed information on the PowerShell project, focused on Windows system administration and automation.">
+    <meta name="description" content="Detailed information on PowerShell automation and scripting projects.">
     <title>PowerShell Project - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; text-align: left; width: fit-content; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+        
+        /* Bloque de código estilo PowerShell ISE */
+        pre { 
+            background: rgba(0, 0, 50, 0.4); 
+            padding: 15px; 
+            border-left: 4px solid #0078d4; 
+            color: #fff;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+        }
+        .ps-blue { color: #0078d4; font-weight: bold; }
+    </style>
 </head>
 <body id="top">
-<div id="boot-screen">
-    <div id="boot-text"></div>
-    <span class="cursor">_</span>
-</div>
+
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+        <span class="cursor">_</span>
+    </div>
+
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                PS C:\Users\Admin&gt; Get-ExecutionPolicy
+                <span class="ps-blue">PS C:\Users\Agent></span> Get-ExecutionPolicy
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -33,66 +66,60 @@
     <main class="contingut-principal-detall">
         <section class="projecte-detall">
             <div class="titol-detall">
-                <h1>PowerShell: Windows System Management</h1>
+                <h1 data-value="PowerShell: Automation & System Scripting">PowerShell: Automation & System Scripting</h1>
             </div>
 
             <p class="project-summary" style="font-family: monospace; color: #0f0;">
-                &gt; Loading Windows PowerShell modules... [OK]
+                &gt; Execution Policy: RemoteSigned | Modules Loaded: ActiveDirectory, AzureAD
             </p>
 
             <div class="project-part part-1">
                 <div class="content-lines">
-                    <h2>Part 1: Basic Cmdlets and Scripting Fundamentals</h2>
-                    <p class="descripcio-linies">Introduction to the PowerShell Integrated Scripting Environment (ISE).</p>
-                    <p class="descripcio-linies">Learning core cmdlets: Get-Command, Get-Help, and Get-Process.</p>
-                    <p class="descripcio-linies">Understanding the Power of the Pipeline (|) and Object selection.</p>
-                    <pre><code># Example: Check service status
-Get-Service -Name "Spooler" | Select-Object Name, Status</code></pre>
+                    <h2 data-value="Part 1: Active Directory Automation">Part 1: Active Directory Automation</h2>
+                    <p class="descripcio-linies">Automating user onboarding and offboarding processes via CSV.</p>
+                    <p class="descripcio-linies">Bulk modification of AD object attributes and group memberships.</p>
+                    <p class="descripcio-linies">Reporting system status and stale account audits.</p>
                 </div>
-                <div class="cercle powershell-image">Get-</div>
+                <div class="cercle" style="border-color: #0078d4; color: #0078d4;">AD</div>
             </div>
 
             <div class="project-part part-2">
                 <div class="content-lines">
-                    <h2>Part 2: Active Directory (AD) Automation</h2>
-                    <p class="descripcio-linies">Using the RSAT Active Directory module for PowerShell.</p>
-                    <p class="descripcio-linies">Automating user creation (New-ADUser) and group management.</p>
-                    <p class="descripcio-linies">Querying AD properties for security auditing and reporting.</p>
+                    <h2 data-value="Part 2: Object Pipeline & Data Manipulation">Part 2: Object Pipeline & Data Manipulation</h2>
+                    <p class="descripcio-linies">Advanced use of 'Where-Object', 'Select-Object', and 'ForEach-Object'.</p>
+                    <p class="descripcio-linies">Exporting system audits to CSV, JSON, and HTML formats.</p>
+                    <p class="descripcio-linies">Error handling using Try/Catch blocks for robust scripts.</p>
+                    <pre><code>Get-Service | Where-Object { $_.Status -eq "Stopped" } | Start-Service</code></pre>
                 </div>
-                <div class="cercle powershell-image">AD-User</div>
+                <div class="cercle" style="border-color: #0078d4; color: #0078d4;">| pipe</div>
             </div>
-
-
 
             <div class="project-part part-3">
                 <div class="content-lines">
-                    <h2>Part 3: System and Remote Management</h2>
-                    <p class="descripcio-linies">Working with the file system (New-Item) and Windows Registry.</p>
-                    <p class="descripcio-linies">Implementing PowerShell Remoting (WinRM) for network tasks.</p>
-                    <p class="descripcio-linies">Executing tasks across multiple systems with Invoke-Command.</p>
+                    <h2 data-value="Part 3: Security & Incident Response">Part 3: Security & Incident Response</h2>
+                    <p class="descripcio-linies">Identifying suspicious processes and network connections.</p>
+                    <p class="descripcio-linies">Automated log analysis and event viewer monitoring.</p>
+                    <p class="descripcio-linies">Hardening systems via PowerShell Desired State Configuration (DSC).</p>
                 </div>
-                <div class="cercle powershell-image">PS-Rem</div>
+                <div class="cercle" style="border-color: #0078d4; color: #0078d4;">SEC</div>
             </div>
 
-
-
-            <div class="menu-navegacio-pagines-detall">
-                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ PowerShell Terminal Navigation</h3>
+            <nav class="menu-navegacio-pagines-detall">
+                <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Script Navigation</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd C:\Home ]</a>
-                    <a href="packet_tracer_project.html" style="color: #0f0; text-decoration: none;">[ ./networking ]</a>
-                    <a href="sql_project.html" style="color: #0f0; text-decoration: none;">[ ./databases ]</a>
+                    <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
+                    <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux_bash ]</a>
                     <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
                 </div>
-            </div>
+            </nav>
 
         </section>
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Matrix Terminal System. PowerShell Core 7.4 active.</p>
     </footer>
 
-    <script src="./js/matrix_effect.js"></script>
+    <script src="./js/matrix_effects.js"></script>
 </body>
 </html>

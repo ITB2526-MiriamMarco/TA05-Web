@@ -6,18 +6,41 @@
     <meta name="description" content="Dedicated page for the Python Project focusing on data and automation.">
     <title>Python Project Details - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; text-align: left; width: fit-content; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+        pre { background: rgba(0, 30, 0, 0.5); padding: 15px; border-left: 3px solid #3776ab; color: #ffd343; overflow-x: auto; font-family: 'Consolas', monospace; }
+    </style>
 </head>
 <body id="top">
-<div id="boot-screen">
-    <div id="boot-text"></div>
-    <span class="cursor">_</span>
-</div>
+
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+        <span class="cursor">_</span>
+    </div>
+
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
         <div class="logo-container">
             <div class="code-image-simulation">
-                &lt;script src="python.py"&gt;
+                &lt;python3 interpreter --v3.12&gt;
             </div>
         </div>
         <nav class="menu-navegacio-principal">
@@ -34,12 +57,12 @@
         <section class="projecte-detall">
 
             <div class="titol-detall">
-                <h1>Python Project: Data, Automation, and Scripting Fundamentals</h1>
+                <h1 data-value="Python Project: Data & Automation">Python Project: Data, Automation, and Scripting Fundamentals</h1>
             </div>
 
             <div class="project-part part-1">
                 <div class="content-lines">
-                    <h2>Part 1: Python Basics and Data Handling</h2>
+                    <h2 data-value="Part 1: Python Basics and Data Handling">Part 1: Python Basics and Data Handling</h2>
                     <p class="descripcio-linies">Understanding Python syntax, indentation, and comments.</p>
                     <p class="descripcio-linies">Using fundamental data types: strings, integers, floats, and booleans.</p>
                     <p class="descripcio-linies">Implementing essential data structures: Lists, Tuples, Dictionaries, and Sets.</p>
@@ -50,18 +73,20 @@
 
             <div class="project-part part-2">
                 <div class="content-lines">
-                    <h2>Part 2: Logic Control and Modular Programming</h2>
+                    <h2 data-value="Part 2: Logic Control and Modular Programming">Part 2: Logic Control and Modular Programming</h2>
                     <p class="descripcio-linies">Implementing conditional statements (if/elif/else) for logic control.</p>
                     <p class="descripcio-linies">Using iterative structures (for and while loops) for repetition.</p>
                     <p class="descripcio-linies">Creating and calling custom functions for code reusability.</p>
-                    <p class="descripcio-linies">Understanding scope (Local vs. Global) and passing arguments.</p>
+                    <pre><code>def automate_task(data):
+    for item in data:
+        print(f"Processing: {item}")</code></pre>
                 </div>
                 <div class="cercle python-image">def()</div>
             </div>
 
             <div class="project-part part-3">
                 <div class="content-lines">
-                    <h2>Part 3: Practical Automation and Libraries</h2>
+                    <h2 data-value="Part 3: Practical Automation and Libraries">Part 3: Practical Automation and Libraries</h2>
                     <p class="descripcio-linies">Installing and managing external packages using pip.</p>
                     <p class="descripcio-linies">Introduction to Pandas for structured data manipulation.</p>
                     <p class="descripcio-linies">Automating file system tasks using the 'os' and 'shutil' modules.</p>
@@ -70,7 +95,7 @@
                 <div class="cercle python-image">pip</div>
             </div>
 
-            <div class="menu-navegacio-pagines-detall">
+            <nav class="menu-navegacio-pagines-detall">
                 <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ Browse Other Modules</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="linux_project.html" style="color: #0f0; text-decoration: none;">[ ./linux_admin ]</a>
@@ -78,15 +103,15 @@
                     <a href="css_project.html" style="color: #0f0; text-decoration: none;">[ ./css_design ]</a>
                     <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
                 </div>
-            </div>
+            </nav>
 
         </section>
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Matrix Terminal System. All Python modules loaded.</p>
     </footer>
 
-    <script src="./js/matrix_effect.js"></script>
+    <script src="./js/matrix_effects.js"></script>
 </body>
 </html>

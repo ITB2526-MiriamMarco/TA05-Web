@@ -6,12 +6,34 @@
     <meta name="description" content="Dedicated page for the Linux Project focusing on administration and security.">
     <title>Linux Project Details - Code Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            color: #0f0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+        }
+        #boot-text { white-space: pre-wrap; margin-bottom: 10px; text-align: left; width: fit-content; }
+        .cursor { animation: blink 0.8s infinite; color: #0f0; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #matrixCanvas { position: fixed; top: 0; left: 0; z-index: -1; background: #000; }
+    </style>
 </head>
 <body id="top">
-<div id="boot-screen">
-    <div id="boot-text"></div>
-    <span class="cursor">_</span>
-</div>
+
+    <div id="boot-screen">
+        <div id="boot-text"></div>
+        <span class="cursor">_</span>
+    </div>
+
     <canvas id="matrixCanvas"></canvas>
 
     <header class="capcalera-principal">
@@ -34,12 +56,12 @@
         <section class="projecte-detall">
 
             <div class="titol-detall">
-                <h1>Linux Project: In-depth Exploration</h1>
+                <h1 data-value="Linux Project: In-depth Exploration">Linux Project: In-depth Exploration</h1>
             </div>
 
             <div class="project-part part-1">
                 <div class="content-lines">
-                    <h2>Part 1: Linux Command Line Interface (CLI)</h2>
+                    <h2 data-value="Part 1: Linux Command Line Interface (CLI)">Part 1: Linux Command Line Interface (CLI)</h2>
                     <p class="descripcio-linies">Using basic commands like 'ls', 'cd', 'pwd', and 'man'.</p>
                     <p class="descripcio-linies">Understanding file system hierarchy (/, /home, /etc, /var).</p>
                     <p class="descripcio-linies">Input/Output Redirection (>, >>, <, |).</p>
@@ -50,7 +72,7 @@
 
             <div class="project-part part-2">
                 <div class="content-lines">
-                    <h2>Part 2: User Management and Permissions</h2>
+                    <h2 data-value="Part 2: User Management and Permissions">Part 2: User Management and Permissions</h2>
                     <p class="descripcio-linies">Creating, modifying, and deleting user accounts ('useradd', 'usermod').</p>
                     <p class="descripcio-linies">Group management ('groupadd', 'groupdel').</p>
                     <p class="descripcio-linies">Understanding file permissions (rwx) and octal notation (777).</p>
@@ -61,7 +83,7 @@
 
             <div class="project-part part-3">
                 <div class="content-lines">
-                    <h2>Part 3: Networking and Package Management</h2>
+                    <h2 data-value="Part 3: Networking and Package Management">Part 3: Networking and Package Management</h2>
                     <p class="descripcio-linies">Configuration of network interfaces ('ip addr', 'ifconfig').</p>
                     <p class="descripcio-linies">Using utilities like 'ping', 'ssh', 'scp'.</p>
                     <p class="descripcio-linies">Managing services with 'systemctl'.</p>
@@ -70,7 +92,7 @@
                 <div class="cercle linux-image">ip addr</div>
             </div>
 
-            <div class="menu-navegacio-pagines-detall">
+            <nav class="menu-navegacio-pagines-detall">
                 <h3 style="color: #0f0; margin-bottom: 10px;">&gt;_ System Navigation</h3>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="index.html" style="color: #0f0; text-decoration: none;">[ cd /home ]</a>
@@ -78,15 +100,15 @@
                     <a href="css_project.html" style="color: #0f0; text-decoration: none;">[ ./css ]</a>
                     <a href="projects_portfolio.html" style="color: #fff; text-decoration: none;">[ cd .. ]</a>
                 </div>
-            </div>
+            </nav>
 
         </section>
     </main>
 
     <footer class="peu-pagina">
-        <p>&copy; 2025 Code Project Name. All Rights Reserved.</p>
+        <p>&copy; 2026 Matrix Terminal System. All security protocols active.</p>
     </footer>
 
-    <script src="./js/matrix_effect.js"></script>
+    <script src="./js/matrix_effects.js"></script>
 </body>
 </html>
