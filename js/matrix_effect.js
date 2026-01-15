@@ -1,5 +1,6 @@
 /**
- * MATRIX TERMINAL ENGINE - FULL OPTIMIZED & FAIL-SAFE VERSION
+ * MATRIX TERMINAL ENGINE - OPTIMIZED VERSION
+ * FAST BOOT & HIGH PERFORMANCE
  */
 
 const canvas = document.getElementById('matrixCanvas');
@@ -10,6 +11,11 @@ const fontSize = 16;
 const characters = "ｦｱｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEF$+-*/=%<>#!";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ｦｱｳｴｵｶｷｸｹｺ";
 let drops = [];
+
+// FPS Control para la lluvia
+let lastTime = 0;
+const fps = 30;
+const nextFrame = 1000 / fps;
 
 function setupCanvas() {
     canvas.width = window.innerWidth;
@@ -25,12 +31,20 @@ function setupCanvas() {
 }
 
 // --- 2. MATRIX RAIN CORE ---
-function drawMatrix() {
+function drawMatrix(timestamp = 0) {
+    if (timestamp - lastTime < nextFrame) {
+        requestAnimationFrame(drawMatrix);
+        return;
+    }
+    lastTime = timestamp;
+
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = "#0f0"; 
     ctx.font = fontSize + "px monospace";
+    ctx.shadowBlur = 5; // Ligero resplandor
+    ctx.shadowColor = "#0f0";
 
     for (let i = 0; i < drops.length; i++) {
         const text = characters.charAt(Math.floor(Math.random() * characters.length));
@@ -44,7 +58,7 @@ function drawMatrix() {
     requestAnimationFrame(drawMatrix);
 }
 
-// --- 3. HACKER TEXT EFFECTS (DECRYPTING ANIMATION) ---
+// --- 3. HACKER TEXT EFFECTS ---
 function initTextEffects() {
     document.querySelectorAll("h1, h2, .descripcio-linies").forEach(element => {
         let interval = null;
@@ -71,8 +85,8 @@ function initTextEffects() {
                     clearInterval(interval);
                     event.target.innerText = originalValue;
                 }
-                iteration += 1 / 2; 
-            }, 20);
+                iteration += 1 / 3; 
+            }, 30);
         };
 
         element.onmouseleave = event => {
@@ -82,12 +96,11 @@ function initTextEffects() {
     });
 }
 
-// --- 4. ACCELERATED BOOT SEQUENCE ---
+// --- 4. FAST BOOT SEQUENCE (Aprox 1 second) ---
 const bootLines = [
     "> INITIALIZING KERNEL 6.2.0...",
     "> LOADING SYSTEM MODULES........ [OK]",
     "> SECURE PROTOCOLS............. [OK]",
-    "> ACCESSING REPOSITORY......... [DONE]",
     "> WELCOME, AGENT. ACCESS GRANTED."
 ];
 
@@ -99,39 +112,42 @@ async function runBootSequence() {
     bootText.innerText = ""; 
     for (let line of bootLines) {
         bootText.innerText += line + "\n";
-        await new Promise(res => setTimeout(res, Math.random() * 40 + 10));
+        // Velocidad ultra rápida
+        await new Promise(res => setTimeout(res, Math.random() * 20 + 10));
     }
 
     return new Promise(resolve => {
         setTimeout(() => {
-            bootScreen.style.transition = "opacity 0.4s ease";
+            bootScreen.style.transition = "opacity 0.3s ease";
             bootScreen.style.opacity = "0";
             setTimeout(() => {
                 bootScreen.style.display = 'none';
                 resolve();
-            }, 400);
-        }, 400);
+            }, 300);
+        }, 250); // Breve pausa final para lectura
     });
 }
 
-// --- 5. LINK PREFETCHING (INSTANT NAV) ---
+// --- 5. LINK PREFETCHING (FAIL-SAFE) ---
 function initPrefetching() {
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('mouseenter', () => {
             const href = link.getAttribute('href');
             if (href && href.endsWith('.html') && !href.startsWith('#')) {
-                const prefetch = document.createElement('link');
-                prefetch.rel = 'prefetch';
-                prefetch.href = href;
-                document.head.appendChild(prefetch);
+                if (!document.querySelector(`link[href="${href}"]`)) {
+                    const prefetch = document.createElement('link');
+                    prefetch.rel = 'prefetch';
+                    prefetch.href = href;
+                    document.head.appendChild(prefetch);
+                }
             }
         }, { once: true });
     });
 }
 
-// --- 6. INITIALIZATION & FAIL-SAFE LOAD ---
+// --- 6. INITIALIZATION ---
 setupCanvas();
-drawMatrix();
+requestAnimationFrame(drawMatrix);
 initTextEffects();
 initPrefetching();
 
@@ -141,17 +157,15 @@ window.addEventListener('load', () => {
     const hasBooted = sessionStorage.getItem('system_booted');
     const bootScreen = document.getElementById('boot-screen');
 
-    // Función de emergencia para quitar la pantalla negra si algo falla
     const forceExitBoot = () => {
         if (bootScreen) {
-            bootScreen.style.opacity = "0";
-            setTimeout(() => bootScreen.style.display = 'none', 500);
+            bootScreen.style.display = 'none';
         }
     };
 
     if (!hasBooted && bootScreen) {
-        // Si el boot tarda más de 6 segundos, lo quitamos a la fuerza
-        const emergencyTimeout = setTimeout(forceExitBoot, 6000);
+        // Reducido a 2.5 segundos de máximo por si algo falla
+        const emergencyTimeout = setTimeout(forceExitBoot, 2500);
 
         runBootSequence().then(() => {
             clearTimeout(emergencyTimeout);
@@ -165,7 +179,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// Periodic Glitch Effect
+// Periodic Glitch Effect (Cada 15s)
 setInterval(() => {
     const titulo = document.querySelector('h1');
     if (titulo && titulo.innerText === titulo.dataset.value) {
