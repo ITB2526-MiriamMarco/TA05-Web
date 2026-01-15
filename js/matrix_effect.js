@@ -1,46 +1,16 @@
 /**
- * MATRIX TERMINAL SYSTEM - CORE ENGINE
- * Includes: Matrix Rain, Hacker Text Effect, and Smart Boot Sequence
+ * MATRIX TERMINAL SYSTEM - CORE ENGINE (Simplified)
+ * Includes: Matrix Rain and Hacker Text Effect
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. GESTIÓN DE LA PANTALLA DE CARGA (BOOT SEQUENCE)
+    // 1. ELIMINAR PANTALLA DE CARGA (Si existe en el HTML)
     const bootScreen = document.getElementById("boot-screen");
-    const bootText = document.getElementById("boot-text");
-    const isFirstLoad = !sessionStorage.getItem("system_booted");
-
-    const terminalMessages = [
-        "INITIALIZING MATRIX KERNEL 4.0.1...",
-        "LOADING NEURAL NETWORKS...",
-        "ESTABLISHING SECURE PROTOCOLS...",
-        "DECRYPTING DATABASE FILES...",
-        "ACCESS GRANTED. WELCOME, AGENT."
-    ];
-
-    if (isFirstLoad) {
-        let currentLine = 0;
-        const typeMessage = () => {
-            if (currentLine < terminalMessages.length) {
-                bootText.innerHTML += `> ${terminalMessages[currentLine]}\n`;
-                currentLine++;
-                setTimeout(typeMessage, 400); // Velocidad de los mensajes
-            } else {
-                setTimeout(() => {
-                    bootScreen.style.opacity = "0";
-                    setTimeout(() => {
-                        bootScreen.style.display = "none";
-                        sessionStorage.setItem("system_booted", "true");
-                    }, 500);
-                }, 800);
-            }
-        };
-        typeMessage();
-    } else {
-        // Si ya cargó antes, eliminamos la pantalla de carga instantáneamente
+    if (bootScreen) {
         bootScreen.style.display = "none";
     }
 
-    // 2. EFECTO DE TEXTO HACKER (DESCIFRADO)
+    // 2. EFECTO DE TEXTO HACKER (DESCIFRADO AL PASAR EL MOUSE)
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
     const hackerElements = document.querySelectorAll("[data-value]");
 
@@ -48,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         element.onmouseover = event => {
             let iteration = 0;
             const originalValue = event.target.dataset.value;
+            
+            // Evitar duplicar intervalos si ya hay uno corriendo
             clearInterval(element.interval);
 
             element.interval = setInterval(() => {
@@ -96,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const text = characters.charAt(Math.floor(Math.random() * characters.length));
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
+                // Reiniciar gota al llegar al final de la pantalla de forma aleatoria
                 if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
