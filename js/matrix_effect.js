@@ -1,16 +1,21 @@
 /**
- * MATRIX TERMINAL SYSTEM - CORE ENGINE (Simplified)
- * Includes: Matrix Rain and Hacker Text Effect
+ * MATRIX TERMINAL SYSTEM - CORE ENGINE (Final Version)
+ * Incluye: Lluvia Matrix y Efecto Hacker en Títulos
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. ELIMINAR PANTALLA DE CARGA (Si existe en el HTML)
+    
+    // --- 1. LIMPIEZA DE SEGURIDAD ---
+    // Si todavía queda algún div de 'boot-screen' en el HTML, 
+    // lo ocultamos forzosamente para que no bloquee la pantalla.
     const bootScreen = document.getElementById("boot-screen");
     if (bootScreen) {
         bootScreen.style.display = "none";
+        bootScreen.style.visibility = "hidden";
     }
 
-    // 2. EFECTO DE TEXTO HACKER (DESCIFRADO AL PASAR EL MOUSE)
+    // --- 2. EFECTO DE TEXTO HACKER (AL PASAR EL MOUSE) ---
+    // Se activa en cualquier elemento que tenga el atributo data-value
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
     const hackerElements = document.querySelectorAll("[data-value]");
 
@@ -19,14 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
             let iteration = 0;
             const originalValue = event.target.dataset.value;
             
-            // Evitar duplicar intervalos si ya hay uno corriendo
+            // Limpiamos intervalos previos para evitar solapamientos
             clearInterval(element.interval);
 
             element.interval = setInterval(() => {
                 event.target.innerText = originalValue
                     .split("")
                     .map((letter, index) => {
-                        if (index < iteration) return originalValue[index];
+                        if (index < iteration) {
+                            return originalValue[index];
+                        }
                         return letters[Math.floor(Math.random() * letters.length)];
                     })
                     .join("");
@@ -39,11 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     });
 
-    // 3. LLUVIA DE CÓDIGO MATRIX (CANVAS)
+    // --- 3. LLUVIA DE CÓDIGO MATRIX (FONDO CANVAS) ---
     const canvas = document.getElementById("matrixCanvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
 
+        // Ajustar el canvas al tamaño de la ventana
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -51,30 +59,5 @@ document.addEventListener("DOMContentLoaded", () => {
         resizeCanvas();
         window.addEventListener("resize", resizeCanvas);
 
-        const characters = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-
-        function drawMatrix() {
-            // Fondo semitransparente para el efecto estela
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = "#0f0"; // Color verde neón
-            ctx.font = `${fontSize}px monospace`;
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                // Reiniciar gota al llegar al final de la pantalla de forma aleatoria
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-        setInterval(drawMatrix, 50);
-    }
-});
+        // Caracteres: Mezcla de Katakana y Alfanuméricos
+        const characters = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓ0
